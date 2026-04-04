@@ -1,0 +1,23 @@
+<div class="fab-wrapper" id="fab-wrapper">
+  <div class="fab-actions" id="fab-actions">
+    <a href="tel:0800-000-000" class="fab-action-btn" id="fab-call">
+      <span>📞</span>
+      <span class="fab-tooltip">快速撥號</span>
+    </a>
+    <a href="#" class="fab-action-btn" id="fab-line">
+      <span>💬</span>
+      <span class="fab-tooltip">LINE 諮詢</span>
+    </a>
+    <a href="./support.html#booking" class="fab-action-btn" id="fab-booking">
+      <span>📅</span>
+      <span class="fab-tooltip">預約丈量</span>
+    </a>
+  </div>
+  <div class="fab-main" id="fab-main" role="button" tabindex="0" aria-label="返回頂部">
+    <svg class="fab-progress-ring" viewBox="0 0 56 56">
+      <circle class="progress-bg" cx="28" cy="28" r="26"/>
+      <circle class="progress-bar" id="fab-progress-bar" cx="28" cy="28" r="26"/>
+    </svg>
+    <div class="fab-main-btn" id="fab-main-btn">↑</div>
+  </div>
+</div>

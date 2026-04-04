@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ÉLITE DOOR 關於我們 — 品牌故事、常見問題、全台門市據點互動地圖、預約免費到府丈量服務。">
+  <title>ÉLITE DOOR — 關於我們 | 品牌故事與服務據點</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Leaflet Map (free, no API key) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+  <div data-shared-header></div>
+
+
+  <!-- ============================================
+       PAGE HERO (Sub-page style)
+       ============================================ -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="品牌故事">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content gsap-fade-up">
+      <p class="hero-eyebrow">About Élite Door</p>
+      <h1 class="page-hero-title">關於我們</h1>
+      <p class="page-hero-subtitle">二十年如一日的堅持，每一扇門都是對家的承諾。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BRAND VALUES (品牌核心)
+       ============================================ -->
+  <section id="brand-values" class="section">
+    <div class="section-container">
+      <div class="brand-row">
+        <div class="brand-image gsap-fade-left">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="品牌工藝">
+        </div>
+        <div class="brand-content gsap-fade-right">
+          <span class="brand-label">Our Philosophy</span>
+          <h3>百年傳承<br>只為守護最珍貴的你</h3>
+          <p>我們深信，一扇門不僅是金屬與木材的組合——它是一家人安全感的凝聚，是歸屬感的起點。ÉLITE DOOR 創立於 2005 年，從一間小工坊到六間展示中心，我們始終堅守「品質、安全、美學」三位一體的理念，將冰冷的鋼鐵轉化為守護家庭的溫暖力量。</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-number">ISO9001</div>
+              <div class="stat-label">品質認證</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">120+</div>
+              <div class="stat-label">道精工工序</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">F60A</div>
+              <div class="stat-label">防火等級</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FIVE REASONS (五大優勢)
+       ============================================ -->
+  <section id="five-reasons" class="section" style="background: var(--color-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Five Reasons</p>
+        <h2 class="section-title gsap-fade-up">為何選擇 ÉLITE DOOR</h2>
+        <p class="section-subtitle gsap-fade-up">選擇比努力重要，選對了終身無憾。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card gsap-fade-up">
+          <div class="reason-number">01</div>
+          <h4>品牌口碑</h4>
+          <p>在台灣深耕發展 20+ 年，建立良好口碑，朋友鄰居、專業設計師真心推薦的首選品牌。</p>
+        </div>
+        <div class="reason-card gsap-fade-up">
+          <div class="reason-number">02</div>
+          <h4>全方位品質</h4>
+          <p>講求品質、安全、隔音、美觀、服務、保固一次擁有，不需要在不同需求間做妥協。</p>
+        </div>
+        <div class="reason-card gsap-fade-up">
+          <div class="reason-number">03</div>
+          <h4>國際認證</h4>
+          <p>全產品線通過 ISO9001 品質管理認證，大幅降低維修率，讓您安心使用數十年。</p>
+        </div>
+        <div class="reason-card gsap-fade-up">
+          <div class="reason-number">04</div>
+          <h4>專業規劃</h4>
+          <p>專業的規劃設計團隊，為您的宅邸裝潢加分，提高生活品質與居住格調。</p>
+        </div>
+        <div class="reason-card gsap-fade-up">
+          <div class="reason-number">05</div>
+          <h4>終身服務</h4>
+          <p>鉸鍊終身保固、氣密條免費更換、小範圍補漆服務，0800 全年待命的專業團隊。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FAQ SECTION (常見問題)
+       ============================================ -->
+  <section id="faq" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Frequently Asked Questions</p>
+        <h2 class="section-title gsap-fade-up">常見問題</h2>
+        <p class="section-subtitle gsap-fade-up">精選客戶最常詢問的問題，為您一一解答。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <!-- FAQ Category Tabs -->
+      <div class="faq-tabs gsap-fade-up" id="faq-tabs">
+        <button class="faq-tab active" data-category="all">全部問題</button>
+        <button class="faq-tab" data-category="purchase">購買流程</button>
+        <button class="faq-tab" data-category="spec">品質規格</button>
+        <button class="faq-tab" data-category="install">安裝施工</button>
+        <button class="faq-tab" data-category="maintain">保養維護</button>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="faq-list" id="faq-list">
+
+        <!-- 購買流程 -->
+        <div class="faq-item gsap-fade-up" data-category="purchase" id="faq-1">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>如何購買？有哪些服務據點可以參觀實體大門？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>我們在全台設有六間展示中心，歡迎親臨體驗：</p>
+              <ul>
+                <li><strong>新北市</strong>：永和店 / 蘆洲店</li>
+                <li><strong>台北市</strong>：信義店 / 建國店</li>
+                <li><strong>外縣市</strong>：桃園店 / 宜蘭店</li>
+              </ul>
+              <p>可洽以上門市據點參觀或撥打門市電話諮詢，皆有專員為您服務解說。您也可以使用下方的<a href="#store-map" style="color: var(--color-accent-gold);">互動地圖</a>查看各門市位置。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="purchase" id="faq-2">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>製作交期大約需要幾個工作天？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li><strong>非防火門</strong>：約 12–15 個工作天</li>
+                <li><strong>防火門</strong>：約 15–20 個工作天</li>
+                <li><strong>特殊門款</strong>：約 20–25 個工作天</li>
+              </ul>
+              <p>實際天數可能依現況有所調整，以門市接洽為主。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="purchase" id="faq-3">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>購買大門是否能加裝電子鎖？配合方式為何？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>所有門款皆可加裝電子鎖產品</li>
+                <li>可至門市挑選品牌型式，或自行購買電子鎖</li>
+                <li>我們提供代為沖孔服務（費用另計），但不含代為安裝</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 品質規格 -->
+        <div class="faq-item gsap-fade-up" data-category="spec" id="faq-4">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>ÉLITE DOOR 的隔音效果好嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>大門皆有紮實的高密度隔音填充物</li>
+                <li>門框皆有崁入式高磅數氣密條</li>
+                <li>雙玄關門更有內外框雙氣密之功效</li>
+              </ul>
+              <p>💡 <em>溫馨提示：單層門隔音皆為有限，有高隔音需求的客戶，建議挑選雙玄關系列產品，可達 50dB+ 隔音效果。</em></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="spec" id="faq-5">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>防火門與非防火門的差異？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <div class="faq-comparison">
+                <div class="faq-compare-col">
+                  <h5>🔥 防火門</h5>
+                  <ul>
+                    <li>政府合法規格，甲種防火門 F60A 等級</li>
+                    <li>高溫耐燃 1 小時以上</li>
+                    <li>填充防火素材</li>
+                    <li>可開立一式三份防火證書及防火標章</li>
+                    <li>重量較重</li>
+                  </ul>
+                </div>
+                <div class="faq-compare-col">
+                  <h5>🚪 非防火門</h5>
+                  <ul>
+                    <li>門扇填充隔音素材</li>
+                    <li>無法開立防火證書及標章</li>
+                    <li>外觀與防火門相同</li>
+                    <li>重量較輕</li>
+                    <li>適合無法規要求的場所</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="spec" id="faq-6">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>請問製作的大門類型有哪些？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>我們製作的門類型非常廣泛，涵蓋：</p>
+              <div class="faq-tag-grid">
+                <span class="faq-tag">大門</span><span class="faq-tag">鐵門</span><span class="faq-tag">白鐵門</span>
+                <span class="faq-tag">外門</span><span class="faq-tag">內門</span><span class="faq-tag">藝術門</span>
+                <span class="faq-tag">金屬門</span><span class="faq-tag">鍛造門</span><span class="faq-tag">鑄鋁門</span>
+                <span class="faq-tag">玄關門</span><span class="faq-tag">鋼製門</span><span class="faq-tag">鋼木門</span>
+                <span class="faq-tag">通風門</span><span class="faq-tag">防火門</span><span class="faq-tag">遮煙門</span>
+                <span class="faq-tag">防爆門</span><span class="faq-tag">防盜門</span><span class="faq-tag">逃生門</span>
+                <span class="faq-tag">特殊開模訂製</span>
+              </div>
+              <p>可參考<a href="./products.html" style="color: var(--color-accent-gold);">系列款式頁面</a>，並洽詢門市專員為您諮詢規劃。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 安裝施工 -->
+        <div class="faq-item gsap-fade-up" data-category="install" id="faq-7">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>若沒有裝修，可以更換大門嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>完全可以！我們提供兩種施工方式：</p>
+              <div class="faq-comparison">
+                <div class="faq-compare-col">
+                  <h5>🔨 拆除作法</h5>
+                  <p>完整拆除舊門框，重新安裝，需要水泥填補。適合追求完美的客戶。</p>
+                </div>
+                <div class="faq-compare-col">
+                  <h5>🪄 包框工法</h5>
+                  <p>乾式施工，無需水泥。快速安裝、不破壞原有裝潢，施工更方便。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="install" id="faq-8">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>安裝期間有工程鎖嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>任何機械鎖或電子鎖，施工期間皆會提供<strong>工程鎖</strong>給客戶使用</li>
+                <li>確保施工中與完工後的安全保障</li>
+                <li>完工後<strong>無需額外花費換鎖</strong>之費用</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 保養維護 -->
+        <div class="faq-item gsap-fade-up" data-category="maintain" id="faq-9">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>有終生保固服務嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>✅ 鉸鍊<strong>終身保固</strong>及調整</li>
+                <li>✅ 氣密條<strong>終身免費更換</strong></li>
+                <li>✅ 小範圍補漆（大面積依門市另行評估）</li>
+                <li>✅ 提供 <strong>0800 免費服務專線</strong>，技師全年待命</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="maintain" id="faq-10">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>可以用水或酒精清潔門面嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <div class="faq-do-dont">
+                <div class="faq-dont">
+                  <h5>❌ 請避免</h5>
+                  <ul>
+                    <li>不可用水直接清潔刷洗</li>
+                    <li>不可使用甲苯及化學藥劑</li>
+                    <li>不可使用酒精擦拭（會導致掉色）</li>
+                  </ul>
+                </div>
+                <div class="faq-do">
+                  <h5>✅ 正確方式</h5>
+                  <ul>
+                    <li>使用乾布（不易掉毛的材質）</li>
+                    <li>噴上碧麗珠搓揉後擦拭</li>
+                    <li>定期保養可延長門面壽命</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="maintain" id="faq-11">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>門鎖或鉸鍊轉動不順暢應如何處理？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>可先自行上油（針車油 / 恐龍 191 / WD-40）做潤滑保養</li>
+                <li>如短期內無改善，可撥打門市電話或客服專線</li>
+                <li>服務團隊將安排技師為您協助處理</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item gsap-fade-up" data-category="maintain" id="faq-12">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-label">Q</span>
+            <span>正式鎖可以到外面鎖行複製嗎？</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul>
+                <li>可以的，只要鎖行有同款鎖胚皆可直接複製</li>
+                <li>我們亦可提供「專業鎖行資訊」以便複製</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       STORE MAP (門市互動地圖)
+       ============================================ -->
+  <section id="store-map" class="section" style="background: var(--color-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Our Showrooms</p>
+        <h2 class="section-title gsap-fade-up">全台服務據點</h2>
+        <p class="section-subtitle gsap-fade-up">點擊門市名稱，地圖將帶您平滑飛往該據點。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="map-wrapper gsap-scale-in">
+        <!-- Store List -->
+        <div class="store-list" id="store-list">
+
+          <div class="store-card active" data-store="yonghe" id="store-yonghe">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>永和旗艦店</h4>
+                <span class="store-region">新北市</span>
+              </div>
+            </div>
+            <p class="store-address">新北市永和區仁愛路166號1樓</p>
+            <div class="store-meta">
+              <span>📞 02-2926-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+          <div class="store-card" data-store="luzhou" id="store-luzhou">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>蘆洲展示中心</h4>
+                <span class="store-region">新北市</span>
+              </div>
+            </div>
+            <p class="store-address">新北市蘆洲區中山一路80號1樓</p>
+            <div class="store-meta">
+              <span>📞 02-2288-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+          <div class="store-card" data-store="xinyi" id="store-xinyi">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>信義精品店</h4>
+                <span class="store-region">台北市</span>
+              </div>
+            </div>
+            <p class="store-address">臺北市基隆路二段215號1樓</p>
+            <div class="store-meta">
+              <span>📞 02-2377-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+          <div class="store-card" data-store="jianguo" id="store-jianguo">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>建國旗艦店</h4>
+                <span class="store-region">台北市</span>
+              </div>
+            </div>
+            <p class="store-address">臺北市建國北路三段169號1樓</p>
+            <div class="store-meta">
+              <span>📞 02-2509-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+          <div class="store-card" data-store="taoyuan" id="store-taoyuan">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>桃園旗艦店</h4>
+                <span class="store-region">桃園市</span>
+              </div>
+            </div>
+            <p class="store-address">桃園市桃園區經國路695號1樓</p>
+            <div class="store-meta">
+              <span>📞 03-3168-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+          <div class="store-card" data-store="yilan" id="store-yilan">
+            <div class="store-card-header">
+              <div class="store-icon">📍</div>
+              <div>
+                <h4>宜蘭服務處</h4>
+                <span class="store-region">宜蘭縣</span>
+              </div>
+            </div>
+            <p class="store-address">宜蘭縣美功路一段41巷22號1樓</p>
+            <div class="store-meta">
+              <span>📞 03-9368-XXXX</span>
+              <span>🕐 10:00–20:00</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container" id="map-container">
+          <div id="store-map-leaflet" style="width:100%; height:100%; border-radius: 0;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BOOKING SECTION (預約丈量)
+       ============================================ -->
+  <section id="booking" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Book Appointment</p>
+        <h2 class="section-title gsap-fade-up">預約免費丈量</h2>
+        <p class="section-subtitle gsap-fade-up">填寫以下表單，專人將於 24 小時內與您聯繫。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="booking-wrapper gsap-scale-in">
+        <div class="booking-card">
+          <!-- Left: Form -->
+          <form class="booking-form" id="booking-form">
+            <div class="booking-form-grid">
+              <div class="booking-field">
+                <label for="book-name">姓名 <span style="color:var(--color-accent-gold);">*</span></label>
+                <input type="text" id="book-name" placeholder="請輸入您的姓名" required>
+              </div>
+              <div class="booking-field">
+                <label for="book-phone">聯絡電話 <span style="color:var(--color-accent-gold);">*</span></label>
+                <input type="tel" id="book-phone" placeholder="09XX-XXX-XXX" required>
+              </div>
+              <div class="booking-field">
+                <label for="book-email">電子信箱</label>
+                <input type="email" id="book-email" placeholder="your@email.com">
+              </div>
+              <div class="booking-field">
+                <label for="book-city">丈量地點 <span style="color:var(--color-accent-gold);">*</span></label>
+                <select id="book-city" required>
+                  <option value="" disabled selected>選擇縣市...</option>
+                  <option value="taipei">台北市</option>
+                  <option value="newtaipei">新北市</option>
+                  <option value="taoyuan">桃園市</option>
+                  <option value="yilan">宜蘭縣</option>
+                  <option value="other">其他縣市</option>
+                </select>
+              </div>
+              <div class="booking-field">
+                <label for="book-type">感興趣的門款</label>
+                <select id="book-type">
+                  <option value="" disabled selected>選擇門款類型...</option>
+                  <option value="double">雙玄關門系列</option>
+                  <option value="carbon">碳纖防爆門系列</option>
+                  <option value="steel">鋼製壓板門系列</option>
+                  <option value="wood">天然實木門系列</option>
+                  <option value="japan">日式玄關門系列</option>
+                  <option value="fire">防火門系列</option>
+                  <option value="other">其他 / 不確定</option>
+                </select>
+              </div>
+              <div class="booking-field">
+                <label for="book-date">期望丈量日期</label>
+                <input type="date" id="book-date">
+              </div>
+              <div class="booking-field full-width">
+                <label for="book-note">備註說明</label>
+                <textarea id="book-note" rows="3" placeholder="例如：希望安裝防火門，目前公寓 4 樓，有電梯..."></textarea>
+              </div>
+            </div>
+            <div class="booking-submit">
+              <button type="submit" class="advisor-btn" id="booking-submit-btn">
+                <span>📅</span>
+                送出預約申請
+              </button>
+              <p class="booking-privacy">提交即表示您同意我們的隱私政策。我們絕不會分享您的個人資訊。</p>
+            </div>
+          </form>
+
+          <!-- Right: Info -->
+          <div class="booking-info">
+            <div class="booking-info-card">
+              <div class="booking-info-icon">🏠</div>
+              <h4>免費到府丈量</h4>
+              <p>專業技師攜帶精密工具，到府為您精準丈量門洞尺寸，完全免費。</p>
+            </div>
+            <div class="booking-info-card">
+              <div class="booking-info-icon">📐</div>
+              <h4>客製化規劃</h4>
+              <p>根據您的居住環境、需求與預算，量身規劃最適合的門款方案。</p>
+            </div>
+            <div class="booking-info-card">
+              <div class="booking-info-icon">⏱️</div>
+              <h4>快速回覆</h4>
+              <p>24 小時內專人與您電話確認預約細節與合適的到訪時段。</p>
+            </div>
+            <div class="booking-info-card">
+              <div class="booking-info-icon">💰</div>
+              <h4>透明報價</h4>
+              <p>現場丈量後提供詳細報價單，價格透明無隱藏費用。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="booking-success" id="booking-success">
+          <div class="booking-success-icon">✅</div>
+          <h3>預約申請已送出！</h3>
+          <p>感謝您的信任，我們的專人將於 24 小時內與您聯繫確認丈量細節。</p>
+          <button class="hero-cta" id="booking-reset-btn" type="button" style="margin-top:1.5rem;">
+            送出另一筆預約 <span class="cta-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div data-shared-footer></div>
+
+
+  <div data-shared-fab></div>
+
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ÉLITE DOOR 極致系列 — 12 大門款系列、3 大智能鎖具品牌、4 種烤漆工藝。探索最適合您的玄關門方案。">
+  <title>ÉLITE DOOR — 極致系列 | 門款・鎖具・烤漆色系</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+<div data-shared-header></div>
+
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop" alt="極致系列">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content gsap-fade-up">
+      <p class="hero-eyebrow">Product Collection</p>
+      <h1 class="page-hero-title">極致系列</h1>
+      <p class="page-hero-subtitle">12 大門款系列 · 3 大鎖具品牌 · 4 種烤漆工藝<br>為您的第一道防線，精挑細選。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       QUICK NAV — Page Anchors
+       ============================================ -->
+  <nav class="product-quick-nav" id="product-quick-nav">
+    <div class="section-container">
+      <a href="#door-series" class="pqn-link active" data-target="door-series">
+        <span class="pqn-icon">🚪</span> 門款系列
+      </a>
+      <a href="#color-series" class="pqn-link" data-target="color-series">
+        <span class="pqn-icon">🎨</span> 烤漆色系
+      </a>
+      <a href="#lock-series" class="pqn-link" data-target="lock-series">
+        <span class="pqn-icon">🔐</span> 鎖具系列
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================
+       SECTION 1: DOOR SERIES (門款系列)
+       ============================================ -->
+  <section id="door-series" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Door Series</p>
+        <h2 class="section-title gsap-fade-up">門款系列</h2>
+        <p class="section-subtitle gsap-fade-up">12 大系列，涵蓋防盜、隔音、防水、美觀等多元需求。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="product-filter-tabs gsap-fade-up" id="door-filter-tabs">
+        <button class="pf-tab active" data-filter="all">全部系列</button>
+        <button class="pf-tab" data-filter="security">🛡️ 防盜安全</button>
+        <button class="pf-tab" data-filter="soundproof">🔇 隔音靜謐</button>
+        <button class="pf-tab" data-filter="waterproof">💧 防水防鏽</button>
+        <button class="pf-tab" data-filter="luxury">✨ 奢華外觀</button>
+      </div>
+
+      <!-- Door Grid -->
+      <div class="product-grid" id="door-grid">
+
+        <!-- 碳纖防爆門 -->
+        <div class="product-card gsap-fade-up" data-category="security" id="prod-carbon">
+          <div class="product-card-img">
+            <img src="./images/door-carbon.jpg" alt="碳纖防爆門" loading="lazy">
+            <div class="product-badge security">防盜</div>
+            <button class="product-wishlist-btn" data-product="碳纖防爆門" data-img="./images/door-carbon.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>碳纖防爆門</h4>
+            <p>高強度碳纖材質，極致防護力兼具現代美學，有效阻隔破壞與噪音。</p>
+            <div class="product-tags">
+              <span>碳纖防爆</span><span>頂級防護</span><span>抗破壞</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 雙玄關門雙視窗 -->
+        <div class="product-card gsap-fade-up" data-category="soundproof" id="prod-double-window">
+          <div class="product-card-img">
+            <img src="./images/door-double-window.jpg.jpg" alt="雙玄關門雙視窗" loading="lazy">
+            <div class="product-badge soundproof">隔音</div>
+            <button class="product-wishlist-btn" data-product="雙玄關門雙視窗" data-img="./images/door-double-window.jpg.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>雙玄關門雙視窗</h4>
+            <p>內外雙層門扇，搭配雙視窗設計，隔音效果卓越且採光通透。</p>
+            <div class="product-tags">
+              <span>雙層隔音</span><span>雙視窗</span><span>極致寧靜</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 防水防污門 (多款) -->
+        <div class="product-card has-variants gsap-fade-up" data-category="waterproof" id="prod-waterproof">
+          <div class="product-card-img">
+            <img src="./images/door-waterproof.jpg" alt="防水防污門" loading="lazy" id="waterproof-main-img">
+            <div class="product-badge waterproof">防水</div>
+            <button class="product-wishlist-btn" data-product="防水防污門" data-img="./images/door-waterproof.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>防水防污門</h4>
+            <p>特殊塗裝與材質，無懼海島型氣候嚴酷考驗，常保如新。</p>
+            <div class="product-tags">
+              <span>特殊塗裝</span><span>抗候防鏽</span><span>防水防污</span>
+            </div>
+            <div class="product-variants" id="waterproof-variants">
+              <span class="variant-label">門款選擇：</span>
+              <button class="variant-thumb active" data-src="./images/door-waterproof.jpg" data-target="waterproof-main-img">
+                <img src="./images/door-waterproof.jpg" alt="款式 A">
+              </button>
+              <button class="variant-thumb" data-src="./images/door-waterproof-1.jpg" data-target="waterproof-main-img">
+                <img src="./images/door-waterproof-1.jpg" alt="款式 B">
+              </button>
+              <button class="variant-thumb" data-src="./images/door-waterproof-2.jpg" data-target="waterproof-main-img">
+                <img src="./images/door-waterproof-2.jpg" alt="款式 C">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 羅浮宮浮雕門 -->
+        <div class="product-card gsap-fade-up" data-category="luxury" id="prod-louvre">
+          <div class="product-card-img">
+            <img src="./images/door-louvre.jpg" alt="羅浮宮浮雕門" loading="lazy">
+            <div class="product-badge luxury">奢華</div>
+            <button class="product-wishlist-btn" data-product="羅浮宮浮雕門" data-img="./images/door-louvre.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>羅浮宮浮雕門</h4>
+            <p>立體雕塑表現、肌理質感，展現歐式宮廷級的尊貴氣度。</p>
+            <div class="product-tags">
+              <span>立體浮雕</span><span>藝術肌理</span><span>歐式美學</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 鋼製壓板門 -->
+        <div class="product-card gsap-fade-up" data-category="security" id="prod-steel">
+          <div class="product-card-img">
+            <img src="./images/door-steel.jpg" alt="鋼製壓板門" loading="lazy">
+            <div class="product-badge security">防盜</div>
+            <button class="product-wishlist-btn" data-product="鋼製壓板門" data-img="./images/door-steel.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>鋼製壓板門</h4>
+            <p>高強度鋼板壓製，在有限的門洞中提供最大化的防盜性能。</p>
+            <div class="product-tags">
+              <span>高強度鋼板</span><span>堅固防護</span><span>實用首選</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 雙玄關門A系列 -->
+        <div class="product-card gsap-fade-up" data-category="soundproof" id="prod-double-a">
+          <div class="product-card-img">
+            <img src="./images/door-double-a.jpg" alt="雙玄關門A系列" loading="lazy">
+            <div class="product-badge soundproof">隔音</div>
+            <button class="product-wishlist-btn" data-product="雙玄關門A系列" data-img="./images/door-double-a.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>雙玄關門 A 系列</h4>
+            <p>雙玄關結構有效阻隔走道噪音，氣密性佳，適合電梯大樓。</p>
+            <div class="product-tags">
+              <span>阻隔走道音</span><span>雙玄關</span><span>氣密結構</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 百頁通風門 -->
+        <div class="product-card gsap-fade-up" data-category="waterproof" id="prod-ventilate">
+          <div class="product-card-img">
+            <img src="./images/door-ventilate.jpg" alt="百頁通風門" loading="lazy">
+            <div class="product-badge waterproof">通風</div>
+            <button class="product-wishlist-btn" data-product="百頁通風門" data-img="./images/door-ventilate.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>百頁通風門</h4>
+            <p>兼顧隱私與空氣對流設計，讓室內保持通風乾爽。</p>
+            <div class="product-tags">
+              <span>空氣對流</span><span>隱私防護</span><span>通風設計</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 烤漆精雕門 -->
+        <div class="product-card gsap-fade-up" data-category="luxury" id="prod-paint">
+          <div class="product-card-img">
+            <img src="./images/door-paint.jpg" alt="烤漆精雕門" loading="lazy">
+            <div class="product-badge luxury">奢華</div>
+            <button class="product-wishlist-btn" data-product="烤漆精雕門" data-img="./images/door-paint.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>烤漆精雕門</h4>
+            <p>精密雕花搭配烤漆面板，細膩的光澤展現優雅品味。</p>
+            <div class="product-tags">
+              <span>精密雕花</span><span>烤漆質感</span><span>優雅出眾</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 門中門 -->
+        <div class="product-card gsap-fade-up" data-category="security" id="prod-in-door">
+          <div class="product-card-img">
+            <img src="./images/door-in-door.jpg" alt="門中門" loading="lazy">
+            <div class="product-badge security">防盜</div>
+            <button class="product-wishlist-btn" data-product="門中門" data-img="./images/door-in-door.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>門中門</h4>
+            <p>免開大門即可確認訪客或收取包裹，安全又便利。</p>
+            <div class="product-tags">
+              <span>免開大門</span><span>防盜紗網</span><span>便利安全</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 日式玄關門 -->
+        <div class="product-card gsap-fade-up" data-category="luxury soundproof" id="prod-japan">
+          <div class="product-card-img">
+            <img src="./images/door-japan.jpg" alt="日式玄關門" loading="lazy">
+            <div class="product-badge luxury">美學</div>
+            <button class="product-wishlist-btn" data-product="日式玄關門" data-img="./images/door-japan.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>日式玄關門</h4>
+            <p>簡約日式美學，單層門扇實現出色隔音與氣密效果。</p>
+            <div class="product-tags">
+              <span>氣密隔音</span><span>日式美學</span><span>簡約設計</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 科技實木門 -->
+        <div class="product-card gsap-fade-up" data-category="waterproof luxury" id="prod-tech-wood">
+          <div class="product-card-img">
+            <img src="./images/door-tech-wood.jpg" alt="科技實木門" loading="lazy">
+            <div class="product-badge waterproof">防潮</div>
+            <button class="product-wishlist-btn" data-product="科技實木門" data-img="./images/door-tech-wood.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>科技實木門</h4>
+            <p>擁有木質溫暖外觀，卻比天然實木更耐潮濕、不易變形。</p>
+            <div class="product-tags">
+              <span>木紋質感</span><span>防潮抗變形</span><span>溫馨風格</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 石材玄關門 -->
+        <div class="product-card gsap-fade-up" data-category="luxury" id="prod-stone">
+          <div class="product-card-img">
+            <img src="./images/door-stone.jpg" alt="石材玄關門" loading="lazy">
+            <div class="product-badge luxury">奢華</div>
+            <button class="product-wishlist-btn" data-product="石材玄關門" data-img="./images/door-stone.jpg" aria-label="加入願望清單">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-info">
+            <h4>石材玄關門</h4>
+            <p>仿真石材紋理面板，擁有大理石般的奢華視覺，氣派非凡。</p>
+            <div class="product-tags">
+              <span>石材紋理</span><span>精品質感</span><span>氣派門面</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 2: COLOR SERIES (烤漆色系)
+       ============================================ -->
+  <section id="color-series" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Color & Finish</p>
+        <h2 class="section-title gsap-fade-up">烤漆色系</h2>
+        <p class="section-subtitle gsap-fade-up">實際烤漆配色樣本，提供您挑選門面風格時最直觀的參考。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="color-showcase">
+        <div class="color-category gsap-fade-up" id="color-sand">
+          <div class="color-cat-header">
+            <div class="color-cat-number">01</div>
+            <div>
+              <h4>砂面漆</h4>
+              <p>對應檔名尾碼 `-1` 的實拍色卡。</p>
+            </div>
+          </div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-image: url('./images/red-1.jpg'); background-size: cover; background-position: center;" data-name="Red-1"><span>Red-1</span></div>
+            <div class="color-swatch" style="background-image: url('./images/gray-1.jpg'); background-size: cover; background-position: center;" data-name="Gray-1"><span>Gray-1</span></div>
+            <div class="color-swatch" style="background-image: url('./images/brown-1.jpg'); background-size: cover; background-position: center;" data-name="Brown-1"><span>Brown-1</span></div>
+          </div>
+        </div>
+
+        <div class="color-category gsap-fade-up" id="color-texture">
+          <div class="color-cat-header">
+            <div class="color-cat-number">02</div>
+            <div>
+              <h4>顆粒漆</h4>
+              <p>對應檔名尾碼 `-2` 的實拍色卡。</p>
+            </div>
+          </div>
+          <div class="color-swatches">
+            <div class="color-swatch textured" style="background-image: url('./images/red-2.jpg'); background-size: cover; background-position: center;" data-name="Red-2"><span>Red-2</span></div>
+            <div class="color-swatch textured" style="background-image: url('./images/green-2.jpg'); background-size: cover; background-position: center;" data-name="Green-2"><span>Green-2</span></div>
+            <div class="color-swatch textured" style="background-image: url('./images/white-2.jpg'); background-size: cover; background-position: center;" data-name="White-2"><span>White-2</span></div>
+          </div>
+        </div>
+
+        <div class="color-category gsap-fade-up" id="color-handcraft">
+          <div class="color-cat-header">
+            <div class="color-cat-number">03</div>
+            <div>
+              <h4>手工漆</h4>
+              <p>對應檔名尾碼 `-3` 的實拍色卡。</p>
+            </div>
+          </div>
+          <div class="color-swatches">
+            <div class="color-swatch handcraft" style="background-image: url('./images/red-3.jpg'); background-size: cover; background-position: center;" data-name="Red-3"><span>Red-3</span></div>
+            <div class="color-swatch handcraft" style="background-image: url('./images/gold-3.jpg'); background-size: cover; background-position: center;" data-name="Gold-3"><span>Gold-3</span></div>
+          </div>
+        </div>
+
+        <div class="color-category special gsap-fade-up" id="color-special">
+          <div class="color-cat-header">
+            <div class="color-cat-number gold">04</div>
+            <div>
+              <h4>特殊手工漆 <span class="color-premium-tag">Premium</span></h4>
+              <p>對應檔名尾碼 `-4` 的實拍色卡。</p>
+            </div>
+          </div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-image: url('./images/red-4.jpg'); background-size: cover; background-position: center;" data-name="Red-4"><span>Red-4</span></div>
+            <div class="color-swatch" style="background-image: url('./images/black-4.jpg'); background-size: cover; background-position: center;" data-name="Black-4"><span>Black-4</span></div>
+            <div class="color-swatch" style="background-image: url('./images/gold-4.jpg'); background-size: cover; background-position: center;" data-name="Gold-4"><span>Gold-4</span></div>
+            <div class="color-swatch" style="background-image: url('./images/wood-4.jpg'); background-size: cover; background-position: center;" data-name="Wood-4"><span>Wood-4</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 3: LOCK SERIES (鎖具系列)
+       ============================================ -->
+  <section id="lock-series" class="section" style="background: var(--color-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Lock Series</p>
+        <h2 class="section-title gsap-fade-up">鎖具系列</h2>
+        <p class="section-subtitle gsap-fade-up">搭配國際品牌智能鎖具，讓安全與便利兼得。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="lock-grid">
+        <!-- COE Lock -->
+        <div class="lock-card gsap-fade-up" id="lock-coe">
+          <div class="lock-card-img">
+            <img src="./images/coelock.jpg" alt="COE 電子鎖" loading="lazy">
+          </div>
+          <div class="lock-card-info">
+            <div class="lock-brand">COE</div>
+            <h4>COE 多功能電子鎖</h4>
+            <p>台灣在地品牌，專為台灣門款量身設計，安裝服務最完善。</p>
+            <ul class="lock-features">
+              <li>密碼 / 卡片 / 鑰匙三合一</li>
+              <li>防窺密碼面板</li>
+              <li>低電量提醒</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Yale Lock -->
+        <div class="lock-card gsap-fade-up" id="lock-yale">
+          <div class="lock-card-img">
+            <img src="./images/yalelock.jpg" alt="Yale 電子鎖" loading="lazy">
+          </div>
+          <div class="lock-card-info">
+            <div class="lock-brand">YALE</div>
+            <h4>Yale 耶魯電子鎖</h4>
+            <p>全球鎖具第一品牌，逾 180 年歷史，品質與安全的代名詞。</p>
+            <ul class="lock-features">
+              <li>指紋 / 密碼 / 卡片多合一</li>
+              <li>自動上鎖功能</li>
+              <li>國際安全認證</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fingerprint Lock -->
+        <div class="lock-card gsap-fade-up" id="lock-finger">
+          <div class="lock-card-img">
+            <img src="./images/fingerlock.jpg" alt="指紋辨識鎖" loading="lazy">
+          </div>
+          <div class="lock-card-info">
+            <div class="lock-brand">SMART</div>
+            <h4>智慧指紋辨識鎖</h4>
+            <p>最直覺的開門方式，一觸即開，家人共享便利生活。</p>
+            <ul class="lock-features">
+              <li>半導體指紋辨識</li>
+              <li>0.3 秒極速解鎖</li>
+              <li>可存 100 組指紋</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       CTA BANNER
+       ============================================ -->
+  <section class="cta-banner">
+    <div class="cta-banner-bg">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="預約背景">
+    </div>
+    <div class="cta-banner-content gsap-fade-up">
+      <p class="section-eyebrow" style="margin-bottom: 1rem;">Can't Decide?</p>
+      <h3>還在猶豫？讓專家為您推薦</h3>
+      <p>我們提供免費到府丈量與專業諮詢服務，根據您的環境與需求，量身推薦最合適的門款。</p>
+      <a href="./support.html#booking" class="hero-cta" id="cta-products-btn">
+        預約免費丈量
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+
+  <div data-shared-footer></div>
+
+  <div data-shared-fab></div>
+  
+  <!-- Wishlist Toast Notification -->
+  <div class="wishlist-toast" id="wishlist-toast">
+    <span class="toast-icon">❤️</span>
+    <span class="toast-text" id="toast-text">已加入願望清單</span>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+</html>

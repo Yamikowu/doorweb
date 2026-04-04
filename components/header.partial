@@ -1,0 +1,28 @@
+<header id="site-header" class="site-header">
+  <nav class="nav-container">
+    <a href="./index.html" class="nav-logo" id="nav-logo">
+      <div class="logo-icon">É</div>
+      <span>ÉLITE <span class="logo-accent">DOOR</span></span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html">首頁</a></li>
+      <li><a href="./support.html">關於我們</a></li>
+      <li><a href="./products.html">玄關門系列</a></li>
+      <li><a href="./wishlist.html">願望清單</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="開啟選單" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="./index.html">首頁</a>
+  <a href="./support.html">關於我們</a>
+  <a href="./products.html">玄關門系列</a>
+  <a href="./wishlist.html">願望清單</a>
+</div>
