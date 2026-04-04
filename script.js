@@ -227,6 +227,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     );
   }
 
+  const subpageHeroElements = document.querySelectorAll('.page-hero .gsap-fade-up');
+  if (subpageHeroElements.length > 0) {
+    gsap.fromTo(subpageHeroElements,
+      { opacity: 0, y: 36 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        delay: 0.2
+      }
+    );
+  }
+
   // Hero background parallax
   const heroBgImg = document.getElementById('hero-bg-img');
   if (heroBgImg) {
@@ -378,6 +392,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const advisorResultTitle = document.getElementById('advisor-result-title');
   const advisorResultDesc = document.getElementById('advisor-result-desc');
   const advisorResultTags = document.getElementById('advisor-result-tags');
+  const advisorResultLink = document.getElementById('advisor-result-link');
 
   // Recommendation database
   const recommendations = {
@@ -479,14 +494,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         `<span class="result-tag">${tag}</span>`
       ).join('');
 
-      advisorResult.classList.add('show');
+      const recommendationTargetMap = {
+        'villa-security': '#prod-carbon',
+        'villa-soundproof': '#prod-double-window',
+        'villa-waterproof': '#prod-waterproof',
+        'villa-luxury': '#prod-louvre',
+        'elevator-security': '#prod-steel',
+        'elevator-soundproof': '#prod-double-a',
+        'elevator-waterproof': '#prod-ventilate',
+        'elevator-luxury': '#prod-paint',
+        'apartment-security': '#prod-in-door',
+        'apartment-soundproof': '#prod-japan',
+        'apartment-waterproof': '#prod-tech-wood',
+        'apartment-luxury': '#prod-stone'
+      };
 
-      // Smooth scroll to result
-      gsap.to(window, {
-        scrollTo: { y: advisorResult, offsetY: 100 },
-        duration: 0.6,
-        ease: 'power2.inOut'
-      });
+      if (advisorResultLink) {
+        const targetHash = recommendationTargetMap[key] || '#door-series';
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const targetHref = currentPage === 'products.html' ? targetHash : `./products.html${targetHash}`;
+        advisorResultLink.setAttribute('href', targetHref);
+      }
+
+      advisorResult.classList.add('show');
 
       // Animate result
       gsap.fromTo(advisorResult,
@@ -630,20 +660,66 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ============================================
   // 12. SMOOTH SCROLL — for anchor links
   // ============================================
+  const getHeaderOffset = () => {
+    const siteHeader = document.getElementById('site-header');
+    return siteHeader ? siteHeader.offsetHeight + 20 : 100;
+  };
+
+  const scrollToHashTarget = (hash, animate = true) => {
+    if (!hash || hash === '#') return false;
+    const targetEl = document.querySelector(hash);
+    if (!targetEl) return false;
+
+    const offsetY = getHeaderOffset();
+    if (animate) {
+      gsap.to(window, {
+        scrollTo: { y: targetEl, offsetY },
+        duration: 0.75,
+        ease: 'power2.inOut'
+      });
+    } else {
+      const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - offsetY;
+      window.scrollTo(0, Math.max(0, targetTop));
+    }
+    return true;
+  };
+
+  if (window.location.hash) {
+    setTimeout(() => {
+      scrollToHashTarget(window.location.hash, false);
+    }, 60);
+  }
+
+  const highlightTargetCard = () => {
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#prod-')) return;
+
+    const targetCard = document.querySelector(hash);
+    if (!targetCard) return;
+
+    targetCard.classList.add('card-highlight');
+    setTimeout(() => {
+      targetCard.classList.remove('card-highlight');
+    }, 2200);
+  };
+
+  if (window.location.hash) {
+    setTimeout(highlightTargetCard, 140);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
       
       e.preventDefault();
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        gsap.to(window, {
-          scrollTo: { y: targetEl, offsetY: 80 },
-          duration: 0.8,
-          ease: 'power2.inOut'
-        });
+      if (targetId.startsWith('#prod-')) {
+        if (window.location.hash !== targetId) {
+          window.location.hash = targetId;
+        }
+        setTimeout(highlightTargetCard, 80);
       }
+      scrollToHashTarget(targetId, true);
     });
   });
 
@@ -907,6 +983,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const productCards = document.querySelectorAll('#door-grid .product-card');
 
   if (doorFilterTabs.length > 0) {
+    const refreshProductTriggers = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
+        });
+      });
+    };
+
     doorFilterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         // Update active tab
@@ -915,13 +1001,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const filter = tab.getAttribute('data-filter');
 
-        productCards.forEach(card => {
+        productCards.forEach((card, index) => {
           const categories = card.getAttribute('data-category');
+          const shouldShow = filter === 'all' || categories.includes(filter);
 
-          if (filter === 'all' || categories.includes(filter)) {
+          gsap.killTweensOf(card);
+
+          if (shouldShow) {
             card.classList.remove('hiding');
-            card.style.position = '';
-            card.style.visibility = '';
 
             gsap.fromTo(card,
               { opacity: 0, y: 20, scale: 0.96 },
@@ -931,21 +1018,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 scale: 1,
                 duration: 0.45,
                 ease: 'power3.out',
-                delay: 0.05
+                delay: index * 0.03
               }
             );
           } else {
-            gsap.to(card, {
-              opacity: 0,
-              scale: 0.92,
-              duration: 0.3,
-              ease: 'power2.in',
-              onComplete: () => {
-                card.classList.add('hiding');
-              }
-            });
+            card.classList.add('hiding');
           }
         });
+
+        refreshProductTriggers();
       });
     });
   }
@@ -989,6 +1070,45 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (card) {
         const wishBtn = card.querySelector('.product-wishlist-btn');
         if (wishBtn) wishBtn.setAttribute('data-img', newSrc);
+      }
+    });
+  });
+
+  // Product detail row toggle (cards in the same row open/close together)
+  const productDetailToggles = document.querySelectorAll('.product-detail-toggle');
+
+  productDetailToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const clickedCard = btn.closest('.product-card');
+      if (!clickedCard) return;
+
+      const visibleCards = Array.from(document.querySelectorAll('#door-grid .product-card'))
+        .filter(card => !card.classList.contains('hiding'));
+      const clickedTop = clickedCard.offsetTop;
+
+      // Cards sharing similar offsetTop are treated as the same visual row.
+      const rowCards = visibleCards.filter(card => Math.abs(card.offsetTop - clickedTop) < 8);
+      const rowPanels = rowCards
+        .map(card => card.querySelector('.product-detail-panel'))
+        .filter(Boolean);
+      const rowButtons = rowCards
+        .map(card => card.querySelector('.product-detail-toggle'))
+        .filter(Boolean);
+
+      if (rowPanels.length === 0) return;
+
+      const shouldOpen = rowPanels.some(panel => !panel.classList.contains('open'));
+
+      rowPanels.forEach((panel) => {
+        panel.classList.toggle('open', shouldOpen);
+      });
+
+      rowButtons.forEach((toggleBtn) => {
+        toggleBtn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      });
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
       }
     });
   });

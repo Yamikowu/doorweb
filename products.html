@@ -24,13 +24,69 @@
        ============================================ -->
   <section class="page-hero">
     <div class="page-hero-bg">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop" alt="極致系列">
+      <img src="./images/hero.jpg" alt="玄關門系列">
     </div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content gsap-fade-up">
       <p class="hero-eyebrow">Product Collection</p>
-      <h1 class="page-hero-title">極致系列</h1>
+      <h1 class="page-hero-title">玄關門系列</h1>
       <p class="page-hero-subtitle">12 大門款系列 · 3 大鎖具品牌 · 4 種烤漆工藝<br>為您的第一道防線，精挑細選。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SMART DOOR ADVISOR (智能選門助手)
+       ============================================ -->
+  <section id="door-advisor" class="section advisor-section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Smart Door Advisor</p>
+        <h2 class="section-title gsap-fade-up">智能選門助手</h2>
+        <p class="section-subtitle gsap-fade-up">先回答兩個問題，快速縮小門款範圍，再往下看完整系列。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="advisor-card gsap-scale-in" id="advisor-card">
+        <div class="advisor-form" id="advisor-form">
+          <div class="advisor-field">
+            <label for="advisor-env">🏠 您的居住環境</label>
+            <select id="advisor-env">
+              <option value="" disabled selected>請選擇居住類型...</option>
+              <option value="villa">透天別墅</option>
+              <option value="elevator">電梯大樓</option>
+              <option value="apartment">公寓</option>
+            </select>
+          </div>
+
+          <div class="advisor-field">
+            <label for="advisor-feature">⚡ 您最重視的功能</label>
+            <select id="advisor-feature">
+              <option value="" disabled selected>請選擇核心需求...</option>
+              <option value="security">極致防盜</option>
+              <option value="soundproof">超強隔音</option>
+              <option value="waterproof">防水防鏽</option>
+              <option value="luxury">奢華外觀</option>
+            </select>
+          </div>
+
+          <div class="advisor-submit">
+            <button class="advisor-btn" id="advisor-submit-btn" type="button">
+              <span>👉</span>
+              一鍵為我推薦
+            </button>
+          </div>
+        </div>
+
+        <div class="advisor-result" id="advisor-result">
+          <h4 id="advisor-result-title"></h4>
+          <p id="advisor-result-desc"></p>
+          <div id="advisor-result-tags"></div>
+          <a href="#door-series" class="hero-cta" id="advisor-result-link" style="margin-top: 1.5rem; display: inline-flex; font-size: 0.8rem; padding: 0.75rem 1.75rem;">
+            查看推薦門款 <span class="cta-arrow">→</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -61,7 +117,7 @@
       <div class="section-header">
         <p class="section-eyebrow gsap-fade-up">Door Series</p>
         <h2 class="section-title gsap-fade-up">門款系列</h2>
-        <p class="section-subtitle gsap-fade-up">12 大系列，涵蓋防盜、隔音、防水、美觀等多元需求。</p>
+        <p class="section-subtitle gsap-fade-up">12 大系列，涵蓋防盜、隔音、防水、美觀等多元需求。<br>點擊查看規格，了解更多細節。也可先點擊加入願望清單進行比較。</p>
         <div class="section-divider gsap-fade-up"></div>
       </div>
 
@@ -80,7 +136,7 @@
         <!-- 碳纖防爆門 -->
         <div class="product-card gsap-fade-up" data-category="security" id="prod-carbon">
           <div class="product-card-img">
-            <img src="./images/door-carbon.jpg" alt="碳纖防爆門" loading="lazy">
+            <img src="./images/door-carbon.jpg" alt="碳纖防爆門" loading="lazy" id="carbon-main-img">
             <div class="product-badge security">防盜</div>
             <button class="product-wishlist-btn" data-product="碳纖防爆門" data-img="./images/door-carbon.jpg" aria-label="加入願望清單">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -92,15 +148,49 @@
             <div class="product-tags">
               <span>碳纖防爆</span><span>頂級防護</span><span>抗破壞</span>
             </div>
+            <div class="product-variants" id="carbon-variants">
+              <span class="variant-label">門款選擇：</span>
+              <button class="variant-thumb active" data-src="./images/door-carbon.jpg" data-target="carbon-main-img">
+                <img src="./images/door-carbon.jpg" alt="款式 A">
+              </button>
+              <button class="variant-thumb" data-src="./images/door-carbon-1.jpg" data-target="carbon-main-img">
+                <img src="./images/door-carbon-1.jpg" alt="款式 B">
+              </button>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-carbon" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-carbon">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>G01 系列（臻藏 / 雙面造型）</li>
+                <li><strong>材質：</strong>高科技輕量化碳纖維</li>
+                <li><strong>特色：</strong>防爆面材、防水抗酸鹼、耐撞擊</li>
+                <li><strong>門鎖：</strong>雙鎖心，配備施工鑰匙</li>
+                <li><strong>參考尺寸：</strong>120x240 / 150x240 / 240x240 cm</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>120 x 240 cm</td><td>NT$ 21 萬起</td></tr>
+                    <tr><td>150 x 240 cm</td><td>NT$ 32 萬起</td></tr>
+                    <tr><td>240 x 240 cm</td><td>NT$ 43 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <a class="product-detail-link" href="https://www.hung-chan.com.tw/index.php/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9/%E7%A2%B3%E7%BA%96%E9%98%B2%E7%88%86%E9%96%80/item/638.html" target="_blank" rel="noopener noreferrer">查看原始介紹</a>
+            </div>
           </div>
         </div>
 
         <!-- 雙玄關門雙視窗 -->
         <div class="product-card gsap-fade-up" data-category="soundproof" id="prod-double-window">
           <div class="product-card-img">
-            <img src="./images/door-double-window.jpg.jpg" alt="雙玄關門雙視窗" loading="lazy">
+            <img src="./images/door-double-window.jpg" alt="雙玄關門雙視窗" loading="lazy" id="double-window-main-img">
             <div class="product-badge soundproof">隔音</div>
-            <button class="product-wishlist-btn" data-product="雙玄關門雙視窗" data-img="./images/door-double-window.jpg.jpg" aria-label="加入願望清單">
+            <button class="product-wishlist-btn" data-product="雙玄關門雙視窗" data-img="./images/door-double-window.jpg" aria-label="加入願望清單">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </button>
           </div>
@@ -109,6 +199,40 @@
             <p>內外雙層門扇，搭配雙視窗設計，隔音效果卓越且採光通透。</p>
             <div class="product-tags">
               <span>雙層隔音</span><span>雙視窗</span><span>極致寧靜</span>
+            </div>
+            <div class="product-variants" id="double-window-variants">
+              <span class="variant-label">門款選擇：</span>
+              <button class="variant-thumb active" data-src="./images/door-double-window.jpg" data-target="double-window-main-img">
+                <img src="./images/door-double-window.jpg" alt="款式 A">
+              </button>
+              <button class="variant-thumb" data-src="./images/door-double-window-1.jpg" data-target="double-window-main-img">
+                <img src="./images/door-double-window-1.jpg" alt="款式 B">
+              </button>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-double-window" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-double-window">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>外門 A10 禪、內門卡登（雙面造型）</li>
+                <li><strong>特色：</strong>小視窗雙孔、一體成形、雙氣密隔音</li>
+                <li><strong>厚度：</strong>內外門扇皆 5 cm</li>
+                <li><strong>門鎖：</strong>外門雙鎖心；內門 COE5 段鎖 + 3 段暗栓</li>
+                <li><strong>參考尺寸：</strong>雙玄關 100x208 / 118x208；子母門 140~151x208 cm</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 208 cm</td><td>NT$ 5.2 萬起</td></tr>
+                    <tr><td>118 x 208 cm</td><td>NT$ 5.8 萬起</td></tr>
+                    <tr><td>140~151 x 208 cm</td><td>NT$ 6.6 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <a class="product-detail-link" href="https://www.hung-chan.com.tw/index.php/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9/%E9%9B%99%E7%8E%84%E9%97%9C%E9%96%80%E9%9B%99%E8%A6%96%E7%AA%97%E7%B3%BB%E5%88%97/item/622-%E9%9B%99%E7%8E%84%E9%97%9C%E9%96%80%E9%9B%99%E8%A6%96%E7%AA%971.html" target="_blank" rel="noopener noreferrer">查看原始介紹</a>
             </div>
           </div>
         </div>
@@ -140,6 +264,31 @@
                 <img src="./images/door-waterproof-2.jpg" alt="款式 C">
               </button>
             </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-waterproof" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-waterproof">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>外門 D3 璀璨、內門墨灰紙紋（雙面造型）</li>
+                <li><strong>特色：</strong>奈米環保面材，防水/防汙/防潮/防腐/防刮/防撞</li>
+                <li><strong>厚度：</strong>門扇 6.5 cm</li>
+                <li><strong>適用：</strong>1 樓大門、玄關門、側門、後門、房門、浴室門</li>
+                <li><strong>門鎖：</strong>外門雙鎖心；內門 COE5 段鎖 + 3 段暗栓</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 4.6 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 5.2 萬起</td></tr>
+                    <tr><td>150 x 210 cm</td><td>NT$ 6.1 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <a class="product-detail-link" href="https://www.hung-chan.com.tw/index.php/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9/%E9%98%B2%E6%B0%B4%E9%98%B2%E6%B1%A1%E7%B3%BB%E5%88%97/item/688-%E9%98%B2%E6%B0%B4%E9%98%B2%E6%B1%A1%E9%96%80-8-%E9%BB%91%E7%A0%82%E8%89%B2.html" target="_blank" rel="noopener noreferrer">查看原始介紹</a>
+            </div>
           </div>
         </div>
 
@@ -157,6 +306,30 @@
             <p>立體雕塑表現、肌理質感，展現歐式宮廷級的尊貴氣度。</p>
             <div class="product-tags">
               <span>立體浮雕</span><span>藝術肌理</span><span>歐式美學</span>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-louvre" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-louvre">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>歐式浮雕立體門板</li>
+                <li><strong>材質：</strong>鍍鋅鋼板 + 飾面烤漆層</li>
+                <li><strong>特色：</strong>浮雕工藝、抗刮耐磨、視覺層次感高</li>
+                <li><strong>門鎖：</strong>可搭配機械鎖 / 智能電子鎖</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 5.6 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 6.4 萬起</td></tr>
+                    <tr><td>150 x 220 cm</td><td>NT$ 7.8 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -176,6 +349,30 @@
             <div class="product-tags">
               <span>高強度鋼板</span><span>堅固防護</span><span>實用首選</span>
             </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-steel" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-steel">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>簡約壓板紋理設計</li>
+                <li><strong>材質：</strong>高強度鋼板門扇 + 強化門框</li>
+                <li><strong>特色：</strong>耐衝擊、防撬、防鏽處理</li>
+                <li><strong>門鎖：</strong>標配雙鎖心，可升級多段鎖</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>90 x 210 cm</td><td>NT$ 3.8 萬起</td></tr>
+                    <tr><td>100 x 210 cm</td><td>NT$ 4.3 萬起</td></tr>
+                    <tr><td>120 x 220 cm</td><td>NT$ 5.2 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -193,6 +390,30 @@
             <p>雙玄關結構有效阻隔走道噪音，氣密性佳，適合電梯大樓。</p>
             <div class="product-tags">
               <span>阻隔走道音</span><span>雙玄關</span><span>氣密結構</span>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-double-a" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-double-a">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>雙門扇 A 系列搭配</li>
+                <li><strong>材質：</strong>鋼構骨架 + 氣密填充層</li>
+                <li><strong>特色：</strong>雙重緩衝、降噪效果佳、隱私提升</li>
+                <li><strong>門鎖：</strong>外門主鎖 + 內門輔助鎖</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 208 cm</td><td>NT$ 4.9 萬起</td></tr>
+                    <tr><td>118 x 208 cm</td><td>NT$ 5.5 萬起</td></tr>
+                    <tr><td>140 x 208 cm</td><td>NT$ 6.3 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -212,6 +433,30 @@
             <div class="product-tags">
               <span>空氣對流</span><span>隱私防護</span><span>通風設計</span>
             </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-ventilate" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-ventilate">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>百頁導流式門扇</li>
+                <li><strong>材質：</strong>防鏽鋼板 + 防潑水塗層</li>
+                <li><strong>特色：</strong>維持通風、減少潮氣、兼顧隱私</li>
+                <li><strong>門鎖：</strong>可選機械鎖或電子鎖版本</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>90 x 210 cm</td><td>NT$ 4.1 萬起</td></tr>
+                    <tr><td>100 x 210 cm</td><td>NT$ 4.7 萬起</td></tr>
+                    <tr><td>120 x 220 cm</td><td>NT$ 5.9 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -229,6 +474,30 @@
             <p>精密雕花搭配烤漆面板，細膩的光澤展現優雅品味。</p>
             <div class="product-tags">
               <span>精密雕花</span><span>烤漆質感</span><span>優雅出眾</span>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-paint" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-paint">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>精雕紋理 + 高亮烤漆面</li>
+                <li><strong>材質：</strong>金屬門扇結構 + 烤漆飾層</li>
+                <li><strong>特色：</strong>色澤飽滿、門面辨識度高、易清潔</li>
+                <li><strong>門鎖：</strong>可選隱藏式把手與電子鎖組合</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 5.3 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 6.0 萬起</td></tr>
+                    <tr><td>150 x 220 cm</td><td>NT$ 7.2 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -248,6 +517,30 @@
             <div class="product-tags">
               <span>免開大門</span><span>防盜紗網</span><span>便利安全</span>
             </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-in-door" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-in-door">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>主門 + 子門整合結構</li>
+                <li><strong>材質：</strong>鋼板主體 + 防盜紗網配置</li>
+                <li><strong>特色：</strong>收件與通風更便利、提升安全緩衝</li>
+                <li><strong>門鎖：</strong>主門雙鎖點，子門獨立鎖扣</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 4.8 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 5.6 萬起</td></tr>
+                    <tr><td>140 x 220 cm</td><td>NT$ 6.7 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -265,6 +558,30 @@
             <p>簡約日式美學，單層門扇實現出色隔音與氣密效果。</p>
             <div class="product-tags">
               <span>氣密隔音</span><span>日式美學</span><span>簡約設計</span>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-japan" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-japan">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>和風簡線條門面</li>
+                <li><strong>材質：</strong>鋼構芯材 + 木紋飾面層</li>
+                <li><strong>特色：</strong>低調溫潤、氣密降噪、居家百搭</li>
+                <li><strong>門鎖：</strong>可搭配長把手或隱藏鎖體</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 5.1 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 5.9 萬起</td></tr>
+                    <tr><td>150 x 220 cm</td><td>NT$ 7.0 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -284,6 +601,30 @@
             <div class="product-tags">
               <span>木紋質感</span><span>防潮抗變形</span><span>溫馨風格</span>
             </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-tech-wood" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-tech-wood">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>科技木紋系列門板</li>
+                <li><strong>材質：</strong>複合木紋飾層 + 防潮核心板</li>
+                <li><strong>特色：</strong>溫潤木感、防潮穩定、維護容易</li>
+                <li><strong>門鎖：</strong>支援機械鎖與智能鎖規格</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 4.9 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 5.7 萬起</td></tr>
+                    <tr><td>150 x 220 cm</td><td>NT$ 6.8 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -301,6 +642,30 @@
             <p>仿真石材紋理面板，擁有大理石般的奢華視覺，氣派非凡。</p>
             <div class="product-tags">
               <span>石材紋理</span><span>精品質感</span><span>氣派門面</span>
+            </div>
+            <button class="product-detail-toggle" type="button" data-detail-target="detail-stone" aria-expanded="false">
+              查看規格
+            </button>
+            <div class="product-detail-panel" id="detail-stone">
+              <ul class="product-detail-list">
+                <li><strong>樣式：</strong>仿石紋精品門板</li>
+                <li><strong>材質：</strong>石紋飾層 + 強化結構門芯</li>
+                <li><strong>特色：</strong>高質感門面、耐汙抗刮、視覺份量感強</li>
+                <li><strong>門鎖：</strong>可選高安全鎖體與電子鎖整合</li>
+                <li><strong>備註：</strong>以下價格為生成示意，實際依現場估價</li>
+              </ul>
+              <div class="product-price-table-wrap">
+                <table class="product-price-table">
+                  <thead>
+                    <tr><th>尺寸</th><th>參考價格</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>100 x 210 cm</td><td>NT$ 6.2 萬起</td></tr>
+                    <tr><td>120 x 210 cm</td><td>NT$ 7.1 萬起</td></tr>
+                    <tr><td>150 x 220 cm</td><td>NT$ 8.9 萬起</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -328,13 +693,12 @@
             <div class="color-cat-number">01</div>
             <div>
               <h4>砂面漆</h4>
-              <p>對應檔名尾碼 `-1` 的實拍色卡。</p>
             </div>
           </div>
           <div class="color-swatches">
-            <div class="color-swatch" style="background-image: url('./images/red-1.jpg'); background-size: cover; background-position: center;" data-name="Red-1"><span>Red-1</span></div>
-            <div class="color-swatch" style="background-image: url('./images/gray-1.jpg'); background-size: cover; background-position: center;" data-name="Gray-1"><span>Gray-1</span></div>
-            <div class="color-swatch" style="background-image: url('./images/brown-1.jpg'); background-size: cover; background-position: center;" data-name="Brown-1"><span>Brown-1</span></div>
+            <div class="color-swatch" style="background-image: url('./images/red-1.jpg'); background-size: cover; background-position: center;" data-name="Red-1"><span>紅鐵砂色</span></div>
+            <div class="color-swatch" style="background-image: url('./images/gray-1.jpg'); background-size: cover; background-position: center;" data-name="Gray-1"><span>灰砂色</span></div>
+            <div class="color-swatch" style="background-image: url('./images/brown-1.jpg'); background-size: cover; background-position: center;" data-name="Brown-1"><span>咖啡砂閃銀色</span></div>
           </div>
         </div>
 
@@ -343,13 +707,12 @@
             <div class="color-cat-number">02</div>
             <div>
               <h4>顆粒漆</h4>
-              <p>對應檔名尾碼 `-2` 的實拍色卡。</p>
             </div>
           </div>
           <div class="color-swatches">
-            <div class="color-swatch textured" style="background-image: url('./images/red-2.jpg'); background-size: cover; background-position: center;" data-name="Red-2"><span>Red-2</span></div>
-            <div class="color-swatch textured" style="background-image: url('./images/green-2.jpg'); background-size: cover; background-position: center;" data-name="Green-2"><span>Green-2</span></div>
-            <div class="color-swatch textured" style="background-image: url('./images/white-2.jpg'); background-size: cover; background-position: center;" data-name="White-2"><span>White-2</span></div>
+            <div class="color-swatch textured" style="background-image: url('./images/red-2.jpg'); background-size: cover; background-position: center;" data-name="Red-2"><span>紅古銅色</span></div>
+            <div class="color-swatch textured" style="background-image: url('./images/green-2.jpg'); background-size: cover; background-position: center;" data-name="Green-2"><span>墨綠垂紋色</span></div>
+            <div class="color-swatch textured" style="background-image: url('./images/white-2.jpg'); background-size: cover; background-position: center;" data-name="White-2"><span>米白垂紋色</span></div>
           </div>
         </div>
 
@@ -358,12 +721,11 @@
             <div class="color-cat-number">03</div>
             <div>
               <h4>手工漆</h4>
-              <p>對應檔名尾碼 `-3` 的實拍色卡。</p>
             </div>
           </div>
           <div class="color-swatches">
-            <div class="color-swatch handcraft" style="background-image: url('./images/red-3.jpg'); background-size: cover; background-position: center;" data-name="Red-3"><span>Red-3</span></div>
-            <div class="color-swatch handcraft" style="background-image: url('./images/gold-3.jpg'); background-size: cover; background-position: center;" data-name="Gold-3"><span>Gold-3</span></div>
+            <div class="color-swatch handcraft" style="background-image: url('./images/red-3.jpg'); background-size: cover; background-position: center;" data-name="Red-3"><span>紅古銅色</span></div>
+            <div class="color-swatch handcraft" style="background-image: url('./images/gold-3.jpg'); background-size: cover; background-position: center;" data-name="Gold-3"><span>閃黃色</span></div>
           </div>
         </div>
 
@@ -372,14 +734,13 @@
             <div class="color-cat-number gold">04</div>
             <div>
               <h4>特殊手工漆 <span class="color-premium-tag">Premium</span></h4>
-              <p>對應檔名尾碼 `-4` 的實拍色卡。</p>
             </div>
           </div>
           <div class="color-swatches">
-            <div class="color-swatch" style="background-image: url('./images/red-4.jpg'); background-size: cover; background-position: center;" data-name="Red-4"><span>Red-4</span></div>
-            <div class="color-swatch" style="background-image: url('./images/black-4.jpg'); background-size: cover; background-position: center;" data-name="Black-4"><span>Black-4</span></div>
-            <div class="color-swatch" style="background-image: url('./images/gold-4.jpg'); background-size: cover; background-position: center;" data-name="Gold-4"><span>Gold-4</span></div>
-            <div class="color-swatch" style="background-image: url('./images/wood-4.jpg'); background-size: cover; background-position: center;" data-name="Wood-4"><span>Wood-4</span></div>
+            <div class="color-swatch" style="background-image: url('./images/red-4.jpg'); background-size: cover; background-position: center;" data-name="Red-4"><span>紅灰砂閃紅色</span></div>
+            <div class="color-swatch" style="background-image: url('./images/black-4.jpg'); background-size: cover; background-position: center;" data-name="Black-4"><span>全消光黑色</span></div>
+            <div class="color-swatch" style="background-image: url('./images/gold-4.jpg'); background-size: cover; background-position: center;" data-name="Gold-4"><span>金砂色</span></div>
+            <div class="color-swatch" style="background-image: url('./images/wood-4.jpg'); background-size: cover; background-position: center;" data-name="Wood-4"><span>紅木色</span></div>
           </div>
         </div>
 
@@ -425,7 +786,7 @@
           </div>
           <div class="lock-card-info">
             <div class="lock-brand">YALE</div>
-            <h4>Yale 耶魯電子鎖</h4>
+            <h4>Yale 電子鎖</h4>
             <p>全球鎖具第一品牌，逾 180 年歷史，品質與安全的代名詞。</p>
             <ul class="lock-features">
               <li>指紋 / 密碼 / 卡片多合一</li>
