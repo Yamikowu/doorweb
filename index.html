@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ÉLITE DOOR — 家的第一道防線，品味的極致展現。結合德系極致工藝與未來智能科技，為您鍛造堅不可摧的優雅堡壘。">
+  <title>ÉLITE DOOR — 極致玄關門 | 品味的第一道防線</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header id="site-header" class="site-header">
+    <nav class="nav-container">
+      <!-- Logo -->
+      <a href="./index.html" class="nav-logo" id="nav-logo">
+        <div class="logo-icon">É</div>
+        <span>ÉLITE <span class="logo-accent">DOOR</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./index.html" class="active">首頁</a></li>
+        <li><a href="./support.html">關於我們</a></li>
+        <li><a href="./products.html">極致系列</a></li>
+        <li><a href="./wishlist.html">願望清單</a></li>
+      </ul>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="hamburger" id="hamburger" aria-label="開啟選單" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="./index.html">首頁</a>
+    <a href="./support.html">關於我們</a>
+    <a href="./products.html">極致系列</a>
+    <a href="./wishlist.html">願望清單</a>
+  </div>
+
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section id="hero" class="hero">
+    <!-- Background Image -->
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop" alt="高端玄關門" id="hero-bg-img">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <p class="hero-eyebrow gsap-fade-up">Since 2005 · Premium Door Design</p>
+      <h1 class="hero-title gsap-fade-up">家的第一道防線<br>品味的極致展現</h1>
+      <p class="hero-subtitle gsap-fade-up">結合德系極致工藝與未來智能科技，每一扇門皆歷經 120 道手工打磨與極端測試，<br>為您鍛造堅不可摧的優雅堡壘。</p>
+      <a href="./products.html" class="hero-cta gsap-fade-up" id="hero-cta">
+        探索極致工藝
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator gsap-fade-up">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FEATURES SECTION (核心亮點)
+       ============================================ -->
+  <section id="features" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Why Élite Door</p>
+        <h2 class="section-title gsap-fade-up">為何選擇我們</h2>
+        <p class="section-subtitle gsap-fade-up">二十年如一日的堅持——每一扇門，都是對家的承諾。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card gsap-fade-up" id="feature-security">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">極致防護</h3>
+          <p class="feature-desc">軍規級 C4 防爆測試認證，三點式鎖閂鋼構系統，為居家安全築起銅牆鐵壁。</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card gsap-fade-up" id="feature-material">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">頂規材質</h3>
+          <p class="feature-desc">航太級鋁合金骨架，搭配碳纖維面板與天然實木飾面，兼顧強度與美感。</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card gsap-fade-up" id="feature-smart">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              <circle cx="12" cy="16" r="1"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">智能感應</h3>
+          <p class="feature-desc">整合指紋辨識、人臉辨識與手機 NFC 解鎖，無鑰匙時代，迎接主人的優雅歸來。</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card gsap-fade-up" id="feature-soundproof">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 10v4"/><path d="M6 6v12"/><path d="M10 3v18"/><path d="M14 6v12"/><path d="M18 10v4"/><path d="M22 8v8"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">極致隔音</h3>
+          <p class="feature-desc">高密度隔音核心搭配雙層氣密條系統，有效隔絕 45dB 以上噪音，靜享居家時光。</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card gsap-fade-up" id="feature-weather">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">防水防鏽</h3>
+          <p class="feature-desc">14 層奈米級防腐塗裝，2000 小時鹽霧測試認證，從容面對海島型氣候挑戰。</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card gsap-fade-up" id="feature-warranty">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">終身保固</h3>
+          <p class="feature-desc">鉸鍊終身保固、氣密條免費更換，0800 全年無休客服專線，展現道地服務精神。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SMART DOOR ADVISOR (智能選門助手)
+       ============================================ -->
+  <section id="door-advisor" class="section advisor-section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Smart Door Advisor</p>
+        <h2 class="section-title gsap-fade-up">智能選門助手</h2>
+        <p class="section-subtitle gsap-fade-up">不確定哪一款門最適合您？只要回答兩個問題，讓 AI 為您精準推薦。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="advisor-card gsap-scale-in" id="advisor-card">
+        <div class="advisor-form" id="advisor-form">
+          <!-- Select 1: Living Environment -->
+          <div class="advisor-field">
+            <label for="advisor-env">🏠 您的居住環境</label>
+            <select id="advisor-env">
+              <option value="" disabled selected>請選擇居住類型...</option>
+              <option value="villa">透天別墅</option>
+              <option value="elevator">電梯大樓</option>
+              <option value="apartment">公寓</option>
+              <option value="commercial">商業空間</option>
+            </select>
+          </div>
+
+          <!-- Select 2: Priority Feature -->
+          <div class="advisor-field">
+            <label for="advisor-feature">⚡ 您最重視的功能</label>
+            <select id="advisor-feature">
+              <option value="" disabled selected>請選擇核心需求...</option>
+              <option value="security">極致防盜</option>
+              <option value="soundproof">超強隔音</option>
+              <option value="waterproof">防水防鏽</option>
+              <option value="luxury">奢華外觀</option>
+              <option value="smart">智能解鎖</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="advisor-submit">
+            <button class="advisor-btn" id="advisor-submit-btn" type="button">
+              <span>👉</span>
+              一鍵為我推薦
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Area -->
+        <div class="advisor-result" id="advisor-result">
+          <h4 id="advisor-result-title"></h4>
+          <p id="advisor-result-desc"></p>
+          <div id="advisor-result-tags"></div>
+          <a href="./products.html" class="hero-cta" style="margin-top: 1.5rem; display: inline-flex; font-size: 0.8rem; padding: 0.75rem 1.75rem;">
+            查看推薦門款 <span class="cta-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BRAND STORY (品牌故事)
+       ============================================ -->
+  <section id="brand-story" class="section">
+    <div class="section-container">
+      <div class="brand-row">
+        <!-- Image -->
+        <div class="brand-image gsap-fade-left">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="品牌工藝" id="brand-img-1">
+        </div>
+        <!-- Content -->
+        <div class="brand-content gsap-fade-right">
+          <span class="brand-label">Our Craftsmanship</span>
+          <h3>二十年磨一劍<br>百道工序鑄一門</h3>
+          <p>我們深信，一扇門不僅是金屬與木材的組合——它是一家人安全感的凝聚，是歸屬感的起點。從原料篩選到最終安裝，每一扇 ÉLITE DOOR 都歷經嚴苛的 120 道工序，經由匠人之手，賦予冰冷的鋼鐵溫暖的靈魂。</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-number" id="stat-years">20+</div>
+              <div class="stat-label">年專業經驗</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-process">120</div>
+              <div class="stat-label">道精工工序</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-clients">50K+</div>
+              <div class="stat-label">滿意客戶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PRODUCT SHOWCASE (精選門款)
+       ============================================ -->
+  <section id="showcase" class="section" style="background: var(--color-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Featured Collection</p>
+        <h2 class="section-title gsap-fade-up">精選門款</h2>
+        <p class="section-subtitle gsap-fade-up">每一扇門，都有屬於它的故事與靈魂。</p>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- Product 1 -->
+        <div class="showcase-item gsap-fade-up" id="showcase-item-1">
+          <img src="https://images.unsplash.com/photo-1506956191951-7a88da4435e5?q=80&w=1974&auto=format&fit=crop" alt="曜黑之盾">
+          <div class="showcase-overlay">
+            <h4>曜黑之盾</h4>
+            <span>碳纖防爆系列</span>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="showcase-item gsap-fade-up" id="showcase-item-2">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop" alt="晨暮金淬">
+          <div class="showcase-overlay">
+            <h4>晨暮金淬</h4>
+            <span>鑄鋁雕花系列</span>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="showcase-item gsap-fade-up" id="showcase-item-3">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="靜謐原木">
+          <div class="showcase-overlay">
+            <h4>靜謐原木</h4>
+            <span>天然實木系列</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-cta gsap-fade-up">
+        <a href="./products.html" class="hero-cta">
+          瀏覽全部系列
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       TRUST / STATS SECTION (品牌實力)
+       ============================================ -->
+  <section id="trust" class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow gsap-fade-up">Trust & Achievement</p>
+        <h2 class="section-title gsap-fade-up">以數字證明實力</h2>
+        <div class="section-divider gsap-fade-up"></div>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card gsap-fade-up" id="trust-1">
+          <div class="trust-number" data-count="20">0</div>
+          <div class="trust-label">年品牌歷史</div>
+        </div>
+        <div class="trust-card gsap-fade-up" id="trust-2">
+          <div class="trust-number" data-count="6">0</div>
+          <div class="trust-label">全台展示據點</div>
+        </div>
+        <div class="trust-card gsap-fade-up" id="trust-3">
+          <div class="trust-number" data-count="50000">0</div>
+          <div class="trust-label">累積安裝戶數</div>
+        </div>
+        <div class="trust-card gsap-fade-up" id="trust-4">
+          <div class="trust-number" data-count="98">0</div>
+          <div class="trust-label">客戶滿意度</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       CTA BANNER (立即預約)
+       ============================================ -->
+  <section id="cta-banner" class="cta-banner">
+    <div class="cta-banner-bg">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="預約背景">
+    </div>
+    <div class="cta-banner-content gsap-fade-up">
+      <p class="section-eyebrow" style="margin-bottom: 1rem;">Book Now</p>
+      <h3>為您的家，挑選完美的第一道門</h3>
+      <p>我們提供免費到府丈量與專業諮詢服務，讓您從容選擇，毫無後顧之憂。</p>
+      <a href="#" class="hero-cta" id="cta-banner-btn">
+        預約免費丈量
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer id="site-footer" class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <h4>ÉLITE <span class="accent">DOOR</span></h4>
+          <p>家的第一道防線，品味的極致展現。結合德系精工與智能科技，為台灣家庭打造最安全、最美觀的玄關門。</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" id="footer-fb">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" id="footer-ig">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LINE" id="footer-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 4.08 3.39 7.49 7.96 8.32.31.07.73.2.84.47.1.24.06.62.03.87l-.14.82c-.04.24-.19.93.82.51s5.45-3.21 7.43-5.49C21.17 13.41 22 11.98 22 10.5 22 5.81 17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h5>快速連結</h5>
+          <ul>
+            <li><a href="./index.html">首頁</a></li>
+            <li><a href="./support.html">關於我們</a></li>
+            <li><a href="./products.html">極致系列</a></li>
+            <li><a href="./wishlist.html">願望清單</a></li>
+          </ul>
+        </div>
+
+        <!-- Products -->
+        <div class="footer-col">
+          <h5>熱門系列</h5>
+          <ul>
+            <li><a href="./products.html">雙玄關門系列</a></li>
+            <li><a href="./products.html">碳纖防爆門系列</a></li>
+            <li><a href="./products.html">天然實木門系列</a></li>
+            <li><a href="./products.html">日式玄關門系列</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h5>聯絡我們</h5>
+          <ul>
+            <li><a href="tel:0800-000-000">📞 0800-000-000</a></li>
+            <li><a href="mailto:service@elitedoor.com.tw">✉️ service@elitedoor.com.tw</a></li>
+            <li><a href="#">📍 台北市信義區展示中心</a></li>
+            <li><a href="#">🕐 週一至週日 10:00-20:00</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 ÉLITE DOOR. All Rights Reserved.</p>
+        <p>Crafted with precision in Taiwan.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       FLOATING ACTION BUTTON (FAB)
+       ============================================ -->
+  <div class="fab-wrapper" id="fab-wrapper">
+    <!-- Action Buttons (expand on hover) -->
+    <div class="fab-actions" id="fab-actions">
+      <a href="tel:0800-000-000" class="fab-action-btn" id="fab-call">
+        <span>📞</span>
+        <span class="fab-tooltip">快速撥號</span>
+      </a>
+      <a href="#" class="fab-action-btn" id="fab-line">
+        <span>💬</span>
+        <span class="fab-tooltip">LINE 諮詢</span>
+      </a>
+      <a href="#" class="fab-action-btn" id="fab-booking">
+        <span>📅</span>
+        <span class="fab-tooltip">預約丈量</span>
+      </a>
+    </div>
+
+    <!-- Main FAB with Progress Ring -->
+    <div class="fab-main" id="fab-main" role="button" tabindex="0" aria-label="返回頂部">
+      <svg class="fab-progress-ring" viewBox="0 0 56 56">
+        <circle class="progress-bg" cx="28" cy="28" r="26"/>
+        <circle class="progress-bar" id="fab-progress-bar" cx="28" cy="28" r="26"/>
+      </svg>
+      <div class="fab-main-btn" id="fab-main-btn">↑</div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+</html>
