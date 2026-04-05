@@ -800,7 +800,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     targetCard.classList.add('card-highlight');
     setTimeout(() => {
       targetCard.classList.remove('card-highlight');
-    }, 2200);
+    }, 2500);
   };
 
   if (window.location.hash) {
