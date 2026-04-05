@@ -1,5 +1,5 @@
 /* ============================================
-   ÉLITE DOOR — Main JavaScript
+   國寶門集團 — Main JavaScript
    GSAP Animations, Interactive Features, FAB
    ============================================ */
 
@@ -7,13 +7,29 @@ const SHARED_HEADER_FALLBACK = `
 <header id="site-header" class="site-header">
   <nav class="nav-container">
     <a href="./index.html" class="nav-logo" id="nav-logo">
-      <div class="logo-icon">É</div>
-      <span>ÉLITE <span class="logo-accent">DOOR</span></span>
+      <div class="logo-icon">
+        <img src="./images/guobao-logo-mark.svg" alt="國寶門集團 Logo" class="logo-mark">
+      </div>
+      <span>國寶門集團</span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="./index.html">首頁</a></li>
-      <li><a href="./support.html">關於我們</a></li>
-      <li><a href="./products.html">玄關門系列</a></li>
+      <li class="nav-dropdown">
+        <a href="./support.html">關於我們</a>
+        <ul class="nav-submenu">
+          <li><a href="./support.html#faq">常見問題</a></li>
+          <li><a href="./support.html#store-map">門市</a></li>
+          <li><a href="./support.html#booking">預約丈量</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="./products.html">玄關門系列</a>
+        <ul class="nav-submenu">
+          <li><a href="./products.html#door-series">門系列</a></li>
+          <li><a href="./products.html#color-series">門色系列</a></li>
+          <li><a href="./products.html#lock-series">門鎖系列</a></li>
+        </ul>
+      </li>
       <li><a href="./wishlist.html">願望清單</a></li>
     </ul>
     <div class="hamburger" id="hamburger" aria-label="開啟選單" role="button" tabindex="0">
@@ -26,7 +42,13 @@ const SHARED_HEADER_FALLBACK = `
 <div class="mobile-menu" id="mobile-menu">
   <a href="./index.html">首頁</a>
   <a href="./support.html">關於我們</a>
+  <a href="./support.html#faq" class="mobile-sub-link">常見問題</a>
+  <a href="./support.html#store-map" class="mobile-sub-link">門市</a>
+  <a href="./support.html#booking" class="mobile-sub-link">預約丈量</a>
   <a href="./products.html">玄關門系列</a>
+  <a href="./products.html#door-series" class="mobile-sub-link">門系列</a>
+  <a href="./products.html#color-series" class="mobile-sub-link">門色系列</a>
+  <a href="./products.html#lock-series" class="mobile-sub-link">門鎖系列</a>
   <a href="./wishlist.html">願望清單</a>
 </div>
 `;
@@ -36,45 +58,36 @@ const SHARED_FOOTER_FALLBACK = `
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h4>ÉLITE <span class="accent">DOOR</span></h4>
+        <h4>國寶門集團</h4>
         <p>家的第一道防線，品味的極致展現。結合德系精工與智能科技，為台灣家庭打造最安全、最美觀的玄關門。</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook" id="footer-fb"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="Instagram" id="footer-ig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" aria-label="LINE" id="footer-line"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 4.08 3.39 7.49 7.96 8.32.31.07.73.2.84.47.1.24.06.62.03.87l-.14.82c-.04.24-.19.93.82.51s5.45-3.21 7.43-5.49C21.17 13.41 22 11.98 22 10.5 22 5.81 17.52 2 12 2z"/></svg></a>
-        </div>
       </div>
       <div class="footer-col">
         <h5>快速連結</h5>
         <ul>
           <li><a href="./index.html">首頁</a></li>
           <li><a href="./support.html">關於我們</a></li>
-          <li><a href="./products.html">極致系列</a></li>
+          <li><a href="./products.html">玄關門系列</a></li>
           <li><a href="./wishlist.html">願望清單</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>熱門系列</h5>
+        <h5>玄關門</h5>
         <ul>
-          <li><a href="./products.html">雙玄關門系列</a></li>
-          <li><a href="./products.html">碳纖防爆門系列</a></li>
-          <li><a href="./products.html">天然實木門系列</a></li>
-          <li><a href="./products.html">日式玄關門系列</a></li>
+          <li><a href="./products.html#door-series">門系列</a></li>
+          <li><a href="./products.html#color-series">門色系列</a></li>
+          <li><a href="./products.html#lock-series">鎖具系列</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>聯絡我們</h5>
         <ul>
-          <li><a href="tel:0800-000-000">📞 0800-000-000</a></li>
-          <li><a href="mailto:service@elitedoor.com.tw">✉️ service@elitedoor.com.tw</a></li>
-          <li><a href="#">📍 台北市信義區展示中心</a></li>
-          <li><a href="#">🕐 週一至週日 10:00-20:00</a></li>
+          <li><a href="tel:0800368369">📞 電話：0800-368-369</a></li>
+          <li>🕐 周一到周六 9:30-20:00</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 ÉLITE DOOR. All Rights Reserved.</p>
-      <p>Crafted with precision in Taiwan.</p>
+      <p>COPYRIGHT © 2021 GUOBAO DOOR™ INC.</p>
     </div>
   </div>
 </footer>
@@ -83,13 +96,13 @@ const SHARED_FOOTER_FALLBACK = `
 const SHARED_FAB_FALLBACK = `
 <div class="fab-wrapper" id="fab-wrapper">
   <div class="fab-actions" id="fab-actions">
-    <a href="tel:0800-000-000" class="fab-action-btn" id="fab-call">
+    <a href="tel:0800368369" class="fab-action-btn" id="fab-call">
       <span>📞</span>
       <span class="fab-tooltip">快速撥號</span>
     </a>
-    <a href="#" class="fab-action-btn" id="fab-line">
-      <span>💬</span>
-      <span class="fab-tooltip">LINE 諮詢</span>
+    <a href="./support.html#faq" class="fab-action-btn" id="fab-faq">
+      <span>❓</span>
+      <span class="fab-tooltip">常見問題</span>
     </a>
     <a href="./support.html#booking" class="fab-action-btn" id="fab-booking">
       <span>📅</span>
@@ -105,6 +118,93 @@ const SHARED_FAB_FALLBACK = `
   </div>
 </div>
 `;
+
+const WISHLIST_PRODUCT_META = {
+  '碳纖防爆門': {
+    series: '碳纖防爆門系列',
+    need: '高防護、抗破壞、隔音',
+    feature: '高科技碳纖維、防爆面材、耐撞擊',
+    price: 'NT$ 21 萬起',
+    anchor: 'prod-carbon'
+  },
+  '雙玄關門雙視窗': {
+    series: '雙玄關門雙視窗系列',
+    need: '隔音、採光、雙層氣密',
+    feature: '雙門扇結構、雙視窗、小視窗雙孔',
+    price: 'NT$ 5.2 萬起',
+    anchor: 'prod-double-window'
+  },
+  '防水防污門': {
+    series: '防水防污門系列',
+    need: '抗候、防鏽、防污',
+    feature: '特殊塗裝、耐候門面、低維護',
+    price: 'NT$ 5.2 萬起',
+    anchor: 'prod-waterproof'
+  },
+  '羅浮宮浮雕門': {
+    series: '羅浮宮浮雕門系列',
+    need: '外觀質感、立體雕花、門面升級',
+    feature: '歐式浮雕、肌理面材、藝術造型',
+    price: 'NT$ 8.8 萬起',
+    anchor: 'prod-louvre'
+  },
+  '鋼製壓板門': {
+    series: '鋼製壓板門系列',
+    need: '耐用、穩定、實用',
+    feature: '鋼板壓紋、一體成形、結構扎實',
+    price: 'NT$ 4.6 萬起',
+    anchor: 'prod-steel'
+  },
+  '雙玄關門A系列': {
+    series: '雙玄關門 A 系列',
+    need: '隔音、通風、安全',
+    feature: '內外雙門、多段鎖體、氣密結構',
+    price: 'NT$ 4.8 萬起',
+    anchor: 'prod-double-a'
+  },
+  '百頁通風門': {
+    series: '百頁通風門系列',
+    need: '通風、隱私、採光',
+    feature: '百頁導流、視覺遮蔽、環境調節',
+    price: 'NT$ 4.2 萬起',
+    anchor: 'prod-ventilate'
+  },
+  '烤漆精雕門': {
+    series: '烤漆精雕門系列',
+    need: '高辨識造型、門面質感',
+    feature: '精雕紋理、烤漆分層、細節立體',
+    price: 'NT$ 6.8 萬起',
+    anchor: 'prod-paint'
+  },
+  '門中門': {
+    series: '門中門系列',
+    need: '通風、防盜、便利',
+    feature: '大門整合小門、雙重防護、動線彈性',
+    price: 'NT$ 6.2 萬起',
+    anchor: 'prod-in-door'
+  },
+  '日式玄關門': {
+    series: '日式玄關門系列',
+    need: '簡約風格、溫潤木質感',
+    feature: '日式比例、細膩收邊、俐落線條',
+    price: 'NT$ 5.6 萬起',
+    anchor: 'prod-japan'
+  },
+  '科技實木門': {
+    series: '科技實木門系列',
+    need: '木紋美感、耐用與穩定',
+    feature: '科技木皮、抗變形、自然紋理',
+    price: 'NT$ 7.2 萬起',
+    anchor: 'prod-tech-wood'
+  },
+  '石材玄關門': {
+    series: '石材玄關門系列',
+    need: '厚實氣場、高端外觀',
+    feature: '天然石材視覺、雙面造型、門面重量感',
+    price: 'NT$ 9.8 萬起',
+    anchor: 'prod-stone'
+  }
+};
 
 async function loadSharedPartial(selector, path, fallbackHTML = '') {
   const mount = document.querySelector(selector);
@@ -802,42 +902,48 @@ document.addEventListener('DOMContentLoaded', async () => {
         address: '新北市永和區仁愛路166號1樓',
         lat: 24.9962,
         lng: 121.5134,
-        phone: '02-2926-XXXX'
+        phone: '02-8923-0772',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8C%97%E5%B8%82%E6%B0%B8%E5%92%8C%E5%8D%80%E4%BB%81%E6%84%9B%E8%B7%AF166%E8%99%9F1%E6%A8%93'
       },
       luzhou: {
         name: '蘆洲展示中心',
         address: '新北市蘆洲區中山一路80號1樓',
         lat: 25.0847,
         lng: 121.4738,
-        phone: '02-2288-XXXX'
+        phone: '02-2848-7783',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8C%97%E5%B8%82%E8%98%86%E6%B4%B2%E5%8D%80%E4%B8%AD%E5%B1%B1%E4%B8%80%E8%B7%AF80%E8%99%9F1%E6%A8%93'
       },
       xinyi: {
         name: '信義精品店',
         address: '臺北市基隆路二段215號1樓',
         lat: 25.0261,
         lng: 121.5567,
-        phone: '02-2377-XXXX'
+        phone: '02-8732-8128',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8C%97%E5%B8%82%E5%9F%BA%E9%9A%86%E8%B7%AF%E4%BA%8C%E6%AE%B5215%E8%99%9F1%E6%A8%93'
       },
       jianguo: {
         name: '建國旗艦店',
         address: '臺北市建國北路三段169號1樓',
         lat: 25.0659,
         lng: 121.5370,
-        phone: '02-2509-XXXX'
+        phone: '02-2501-6706',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8C%97%E5%B8%82%E5%BB%BA%E5%9C%8B%E5%8C%97%E8%B7%AF%E4%B8%89%E6%AE%B5169%E8%99%9F1%E6%A8%93'
       },
       taoyuan: {
         name: '桃園旗艦店',
         address: '桃園市桃園區經國路695號1樓',
         lat: 24.9969,
         lng: 121.2942,
-        phone: '03-3168-XXXX'
+        phone: '03-325-9837',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E5%B8%82%E6%A1%83%E5%9C%92%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF695%E8%99%9F1%E6%A8%93'
       },
       yilan: {
         name: '宜蘭服務處',
         address: '宜蘭縣美功路一段41巷22號1樓',
         lat: 24.7517,
         lng: 121.7532,
-        phone: '03-9368-XXXX'
+        phone: '03-9301487',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E5%AE%9C%E8%98%AD%E7%B8%A3%E7%BE%8E%E5%8A%9F%E8%B7%AF%E4%B8%80%E6%AE%B541%E5%B7%B722%E8%99%9F1%E6%A8%93'
       }
     };
 
@@ -882,6 +988,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <h4>${store.name}</h4>
         <p>${store.address}</p>
         <p style="color: #C5A059 !important;margin-top:4px !important;">${store.phone}</p>
+        <p style="margin-top:8px !important;"><a href="${store.mapUrl}" target="_blank" rel="noopener noreferrer" style="color:#C5A059 !important;text-decoration:underline;">開啟 Google Maps</a></p>
       `);
       markers[key] = marker;
     });
@@ -891,6 +998,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Store card click — fly to location
     const storeCards = document.querySelectorAll('.store-card');
+    const storeActionLinks = document.querySelectorAll('.store-actions a');
+    storeActionLinks.forEach((link) => {
+      link.addEventListener('click', (e) => e.stopPropagation());
+    });
+
     storeCards.forEach(card => {
       card.addEventListener('click', () => {
         const storeKey = card.getAttribute('data-store');
@@ -1117,16 +1229,37 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ============================================
   // 14. PRODUCTS PAGE — Wishlist (localStorage)
   // ============================================
+  const WISHLIST_STORAGE_KEY = 'guobaoWishlist';
+  const LEGACY_WISHLIST_STORAGE_KEY = 'eliteDoorWishlist';
+
+  function migrateLegacyWishlistIfNeeded() {
+    try {
+      const hasNewKey = localStorage.getItem(WISHLIST_STORAGE_KEY);
+      if (hasNewKey) return;
+
+      const legacyRaw = localStorage.getItem(LEGACY_WISHLIST_STORAGE_KEY);
+      if (!legacyRaw) return;
+
+      const legacyData = JSON.parse(legacyRaw);
+      if (!Array.isArray(legacyData)) return;
+
+      localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(legacyData));
+      localStorage.removeItem(LEGACY_WISHLIST_STORAGE_KEY);
+    } catch (e) {
+      // Ignore corrupted legacy data to avoid breaking page initialization.
+    }
+  }
+
   function getWishlist() {
     try {
-      return JSON.parse(localStorage.getItem('eliteDoorWishlist')) || [];
+      return JSON.parse(localStorage.getItem(WISHLIST_STORAGE_KEY)) || [];
     } catch (e) {
       return [];
     }
   }
 
   function saveWishlist(list) {
-    localStorage.setItem('eliteDoorWishlist', JSON.stringify(list));
+    localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(list));
   }
 
   function showToast(message) {
@@ -1156,6 +1289,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
   }
+
+  migrateLegacyWishlistIfNeeded();
 
   // Initialize wishlist state
   updateWishlistButtons();
@@ -1192,6 +1327,207 @@ document.addEventListener('DOMContentLoaded', async () => {
       saveWishlist(wishlist);
     });
   });
+
+  // ============================================
+  // 14-1. WISHLIST PAGE — Render & Compare
+  // ============================================
+  const wishlistGrid = document.getElementById('wishlist-grid');
+  const wishlistEmpty = document.getElementById('wishlist-empty');
+  const wishlistCountText = document.getElementById('wishlist-count-text');
+  const wishlistClearBtn = document.getElementById('wishlist-clear-btn');
+  const compareHint = document.getElementById('compare-hint');
+  const compareSelect1 = document.getElementById('compare-select-1');
+  const compareSelect2 = document.getElementById('compare-select-2');
+  const compareSelect3 = document.getElementById('compare-select-3');
+  const compareTableWrap = document.getElementById('compare-table-wrap');
+  const compareTable = document.getElementById('compare-table');
+
+  if (wishlistGrid) {
+    const compareSelects = [compareSelect1, compareSelect2, compareSelect3].filter(Boolean);
+    const selectedCompare = ['', '', ''];
+
+    const getMeta = (name) => WISHLIST_PRODUCT_META[name] || {
+      series: '玄關門系列',
+      need: '依現場需求評估',
+      feature: '客製化規格',
+      price: '歡迎洽詢',
+      anchor: ''
+    };
+
+    const renderCompareSelectOptions = (wishlist) => {
+      if (compareSelects.length === 0) return;
+
+      compareSelects.forEach((select, index) => {
+        const currentValue = selectedCompare[index] || '';
+        const options = [
+          `<option value="">請選擇門款</option>`,
+          ...wishlist.map((item) => `<option value="${item.name}">${item.name}</option>`)
+        ];
+        select.innerHTML = options.join('');
+        select.value = wishlist.some(item => item.name === currentValue) ? currentValue : '';
+        selectedCompare[index] = select.value;
+      });
+    };
+
+    const renderCompareTable = () => {
+      const wishlist = getWishlist();
+      const selectedNames = selectedCompare.filter(Boolean);
+      const selectedItems = selectedNames
+        .map((name) => wishlist.find(item => item.name === name))
+        .filter(Boolean);
+
+      if (selectedItems.length < 2) {
+        compareTableWrap.hidden = true;
+        compareHint.textContent = `已選 ${selectedItems.length} 款，請再選擇至少 2 款門型開始對比。`;
+        return;
+      }
+
+      compareHint.textContent = `已選 ${selectedItems.length} 款門型進行對比。`;
+
+      const rows = [
+        { label: '系列定位', getter: (m) => m.series },
+        { label: '適合需求', getter: (m) => m.need },
+        { label: '主要特色', getter: (m) => m.feature },
+        { label: '參考價格', getter: (m) => m.price },
+        {
+          label: '查看門款',
+          getter: (m, item) => {
+            if (!m.anchor) return '—';
+            return `<a href="./products.html#${m.anchor}">前往 ${item.name}</a>`;
+          }
+        }
+      ];
+
+      const headerCells = selectedItems.map(item => `<th>${item.name}</th>`).join('');
+      const bodyRows = rows.map((row) => {
+        const cells = selectedItems.map((item) => {
+          const meta = getMeta(item.name);
+          return `<td>${row.getter(meta, item) || '—'}</td>`;
+        }).join('');
+        return `<tr><th scope="row">${row.label}</th>${cells}</tr>`;
+      }).join('');
+
+      compareTable.innerHTML = `
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            ${headerCells}
+          </tr>
+        </thead>
+        <tbody>
+          ${bodyRows}
+        </tbody>
+      `;
+      compareTableWrap.hidden = false;
+    };
+
+    const renderWishlistPage = () => {
+      const wishlist = getWishlist().sort((a, b) => (b.addedAt || 0) - (a.addedAt || 0));
+      const names = new Set(wishlist.map(item => item.name));
+
+      selectedCompare.forEach((name, index) => {
+        if (name && !names.has(name)) selectedCompare[index] = '';
+      });
+
+      if (selectedCompare.every(v => !v) && wishlist.length >= 2) {
+        selectedCompare[0] = wishlist[0].name;
+        selectedCompare[1] = wishlist[1].name;
+      }
+
+      wishlistCountText.textContent = `目前 ${wishlist.length} 款`;
+      wishlistGrid.innerHTML = '';
+      renderCompareSelectOptions(wishlist);
+
+      if (wishlist.length === 0) {
+        wishlistEmpty.hidden = false;
+        compareSelects.forEach((select) => {
+          select.innerHTML = '<option value="">請先加入門款</option>';
+          select.value = '';
+        });
+        compareTableWrap.hidden = true;
+        compareHint.textContent = '加入門款後即可開始對比。';
+        return;
+      }
+
+      wishlistEmpty.hidden = true;
+
+      wishlist.forEach((item) => {
+        const meta = getMeta(item.name);
+        const productHref = meta.anchor ? `./products.html#${meta.anchor}` : './products.html';
+
+        const card = document.createElement('article');
+        card.className = 'wishlist-item';
+        card.innerHTML = `
+          <div class="wishlist-item-img">
+            <img src="${item.img || './images/door-carbon.jpg'}" alt="${item.name}" loading="lazy">
+          </div>
+          <div class="wishlist-item-body">
+            <h4>${item.name}</h4>
+            <p>${meta.feature}</p>
+            <ul class="wishlist-item-meta">
+              <li><strong>系列：</strong>${meta.series}</li>
+              <li><strong>需求：</strong>${meta.need}</li>
+              <li><strong>價格：</strong>${meta.price}</li>
+            </ul>
+            <div class="wishlist-item-actions">
+              <div class="wishlist-item-links">
+                <a href="${productHref}">查看門款</a>
+                <button type="button" class="wishlist-remove-btn" data-remove-name="${item.name}" aria-label="移除 ${item.name}">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path>
+                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        wishlistGrid.appendChild(card);
+      });
+
+      wishlistGrid.querySelectorAll('[data-remove-name]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const name = btn.getAttribute('data-remove-name');
+          const list = getWishlist().filter(item => item.name !== name);
+          saveWishlist(list);
+          for (let i = 0; i < selectedCompare.length; i += 1) {
+            if (selectedCompare[i] === name) selectedCompare[i] = '';
+          }
+          renderWishlistPage();
+          showToast(`已從願望清單移除「${name}」`);
+        });
+      });
+
+      renderCompareTable();
+    };
+
+    compareSelects.forEach((select, index) => {
+      select.addEventListener('change', () => {
+        const nextValue = select.value;
+        if (nextValue && selectedCompare.some((value, i) => i !== index && value === nextValue)) {
+          showToast('同一款門型不可重複對比');
+          select.value = selectedCompare[index] || '';
+          return;
+        }
+        selectedCompare[index] = nextValue;
+        renderCompareTable();
+      });
+    });
+
+    if (wishlistClearBtn) {
+      wishlistClearBtn.addEventListener('click', () => {
+        saveWishlist([]);
+        for (let i = 0; i < selectedCompare.length; i += 1) selectedCompare[i] = '';
+        renderWishlistPage();
+        showToast('願望清單已清空');
+      });
+    }
+
+    renderWishlistPage();
+  }
 
 
   // ============================================

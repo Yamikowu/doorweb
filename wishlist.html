@@ -3,29 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ÉLITE DOOR 願望清單。">
-  <title>ÉLITE DOOR — 願望清單</title>
+  <meta name="description" content="國寶門集團 願望清單。">
+  <title>國寶門集團 — 願望清單</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="./images/guobao-logo-mark.svg">
 </head>
 <body>
   <div data-shared-header></div>
 
-  <main class="section" style="min-height: 70vh; display: grid; place-items: center;">
-    <div class="section-container" style="text-align: center;">
-      <p class="section-eyebrow">Wishlist</p>
-      <h1 class="section-title">願望清單</h1>
-      <p class="section-subtitle">內容建置中，敬請期待。</p>
+  <section class="page-hero page-hero-sm">
+    <div class="page-hero-bg">
+      <img src="./images/hero1.jpg" alt="願望清單背景">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content gsap-fade-up">
+      <p class="hero-eyebrow">Wishlist</p>
+      <h1 class="page-hero-title">我的願望清單</h1>
+      <p class="page-hero-subtitle">收藏你喜歡的門款，直接做規格與預算對比。</p>
+    </div>
+  </section>
+
+  <main class="section wishlist-page">
+    <div class="section-container">
+      <div class="wishlist-toolbar gsap-fade-up">
+        <div>
+          <h2 class="section-title">已收藏門款</h2>
+          <p class="section-subtitle" id="wishlist-count-text">目前 0 款</p>
+        </div>
+        <div class="wishlist-toolbar-actions">
+          <a class="cta-btn secondary" href="./products.html#door-series">繼續挑選</a>
+          <button class="cta-btn outline" id="wishlist-clear-btn" type="button">清空清單</button>
+        </div>
+      </div>
+
+      <div class="wishlist-grid" id="wishlist-grid"></div>
+
+      <div class="wishlist-empty" id="wishlist-empty" hidden>
+        <h3>目前還沒有收藏門款</h3>
+        <p>先到產品頁加入願望清單，再回來做對比。</p>
+        <a class="cta-btn" href="./products.html">前往玄關門系列</a>
+      </div>
+
+      <section class="wishlist-compare gsap-fade-up" id="wishlist-compare">
+        <div class="wishlist-compare-head">
+          <h3>門款對比</h3>
+          <p id="compare-hint">請用下拉選單挑選 2 至 3 款門型開始對比。</p>
+        </div>
+
+        <div class="wishlist-compare-controls" id="compare-controls">
+          <label>
+            門款 A
+            <select id="compare-select-1"></select>
+          </label>
+          <label>
+            門款 B
+            <select id="compare-select-2"></select>
+          </label>
+          <label>
+            門款 C
+            <select id="compare-select-3"></select>
+          </label>
+        </div>
+
+        <div class="wishlist-compare-table-wrap" id="compare-table-wrap" hidden>
+          <table class="wishlist-compare-table" id="compare-table"></table>
+        </div>
+      </section>
     </div>
   </main>
 
   <div data-shared-footer></div>
   <div data-shared-fab></div>
+  <div class="wishlist-toast" id="wishlist-toast">
+    <span class="toast-icon">❤️</span>
+    <span class="toast-text" id="toast-text">已更新願望清單</span>
+  </div>
 
   <script src="./script.js"></script>
 </body>

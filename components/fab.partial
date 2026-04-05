@@ -1,12 +1,12 @@
 <div class="fab-wrapper" id="fab-wrapper">
   <div class="fab-actions" id="fab-actions">
-    <a href="tel:0800-000-000" class="fab-action-btn" id="fab-call">
+    <a href="tel:0800368369" class="fab-action-btn" id="fab-call">
       <span>📞</span>
       <span class="fab-tooltip">快速撥號</span>
     </a>
-    <a href="#" class="fab-action-btn" id="fab-line">
-      <span>💬</span>
-      <span class="fab-tooltip">LINE 諮詢</span>
+    <a href="./support.html#faq" class="fab-action-btn" id="fab-faq">
+      <span>❓</span>
+      <span class="fab-tooltip">常見問題</span>
     </a>
     <a href="./support.html#booking" class="fab-action-btn" id="fab-booking">
       <span>📅</span>
